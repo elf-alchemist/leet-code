@@ -6,6 +6,8 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test-easy": "node src/leet-*-easy.js",
+    "test-medium": "node src/leet-*-medium.js",
+    "test-hard": "node src/leet-*-hard.js"
   }
 }

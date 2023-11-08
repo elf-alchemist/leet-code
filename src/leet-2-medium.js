@@ -1,6 +1,6 @@
 
 //
-// LeetCode challange: 2
+// LeetCode challange: 2 - Yet unsolved
 //
 
 // You are given two non - empty linked lists representing two non - negative integers.
