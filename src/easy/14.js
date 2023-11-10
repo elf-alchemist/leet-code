@@ -1,6 +1,6 @@
 
 //
-// LeetCode chalenge: 14 - Solved
+// LeetCode challenge: 14 - Solved
 //
 
 // Write a function to find the longest common prefix string amongst an array of strings.
@@ -55,16 +55,16 @@ describe('LeetCode - 14', { timeout: 1_000 }, () => {
   });
   test('Case 3', () => {
 
-    const secondInput = [''];
+    const thirdInput = [''];
 
-    strictEqual(longestCommonPrefix(secondInput), '');
+    strictEqual(longestCommonPrefix(thirdInput), '');
 
   });
   test('Case 4', () => {
 
-    const secondInput = ['a'];
+    const fourthInput = ['a'];
 
-    strictEqual(longestCommonPrefix(secondInput), 'a');
+    strictEqual(longestCommonPrefix(fourthInput), 'a');
 
   });
 });

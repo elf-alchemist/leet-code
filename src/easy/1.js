@@ -29,16 +29,11 @@ import { deepStrictEqual } from 'node:assert';
  * @return {Array<number>}
  */
 function twoSum(nums, target) {
-  const result = [];
   for (let outerIndex = 0; outerIndex < nums.length; outerIndex++) {
     for (let innerIndex = outerIndex + 1; innerIndex < nums.length; innerIndex++) {
-      if (nums[outerIndex] + nums[innerIndex] === target) {
-        result.push(outerIndex, innerIndex);
-        break;
-      }
+      if (nums[outerIndex] + nums[innerIndex] === target) return [outerIndex, innerIndex];
     }
   }
-  return result;
 };
 
 

@@ -5,6 +5,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "only": "_f(){ node --test src/**/$1.js; }; _f",
     "easy": "node --test src/easy/**.js",
     "medium": "node --test src/medium/**.js",
     "hard": "node --test src/hard/**.js",
