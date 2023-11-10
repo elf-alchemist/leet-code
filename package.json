@@ -3,11 +3,5 @@
   "author": "Guilherme M. Miranda <alchemist.software@proton.me>",
   "license": "CC0-1.0",
   "version": "1.0.0",
-  "description": "",
-  "type": "module",
-  "scripts": {
-    "test-easy": "node src/leet-*-easy.js",
-    "test-medium": "node src/leet-*-medium.js",
-    "test-hard": "node src/leet-*-hard.js"
-  }
+  "type": "module"
 }

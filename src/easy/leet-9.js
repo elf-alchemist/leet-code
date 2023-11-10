@@ -1,6 +1,6 @@
 
 //
-// LeetCode challenge: 9 - Yet unsolved
+// LeetCode challenge: 9 - Solved
 //
 
 // Given an integer `x`, return true if `x` is a palindrome, and false otherwise.
