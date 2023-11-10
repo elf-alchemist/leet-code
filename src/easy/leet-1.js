@@ -20,6 +20,7 @@
 //   Input:       nums = [3, 3], target = 6
 //   Output:      [0, 1]
 
+import { describe, test } from 'node:test';
 import { deepStrictEqual } from 'node:assert';
 
 /**
@@ -40,20 +41,32 @@ function twoSum(nums, target) {
   return result;
 };
 
-deepStrictEqual(
-  twoSum([2, 7, 11, 15], 9),
-  [0, 1],
-);
-console.log('Successfully passed test 01.');
 
-deepStrictEqual(
-  twoSum([3, 2, 4], 6),
-  [1, 2],
-);
-console.log('Successfully passed test 02.');
+describe('LeetCode - 1', { timeout: 1_000 }, () => {
+  test('Case 1', () => {
 
-deepStrictEqual(
-  twoSum([3, 3], 6),
-  [0, 1],
-);
-console.log('Successfully passed test 03.');
+    const firstNums = [2, 7, 11, 15];
+    const firstTarget = 9;
+    const firstResult = twoSum(firstNums, firstTarget)
+
+    deepStrictEqual(firstResult, [0, 1]);
+  });
+
+  test('Case 2', () => {
+
+    const secondNums = [3, 2, 4];
+    const secondTarget = 6;
+    const secondResult = twoSum(secondNums, secondTarget)
+
+    deepStrictEqual(secondResult, [1, 2]);
+  });
+
+  test('Case 3', () => {
+
+    const thirdNums = [3, 3];
+    const thirdTarget = 6;
+    const thirdResult = twoSum(thirdNums, thirdTarget)
+
+    deepStrictEqual(thirdResult, [0, 1]);
+  });
+})

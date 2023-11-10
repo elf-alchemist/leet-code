@@ -25,6 +25,7 @@
 // Constraints:
 // -2^31 <= x <= 2^31 - 1
 
+import { describe, test } from 'node:test';
 import { strictEqual } from 'node:assert';
 
 /**
@@ -42,11 +43,20 @@ function isPalindrome(num) {
   return true;
 }
 
-strictEqual(isPalindrome(121), true);
-console.log('Successfully passed test 01.');
+describe('LeetCode - 9', { timeout: 1_000 }, () => {
+  test('Case 1', () => {
 
-strictEqual(isPalindrome(-121), false);
-console.log('Successfully passed test 02.');
+    strictEqual(isPalindrome(121), true);
 
-strictEqual(isPalindrome(10), false);
-console.log('Successfully passed test 03.');
+  });
+  test('Case 2', () => {
+
+    strictEqual(isPalindrome(-121), false);
+
+  });
+  test('Case 3', () => {
+
+    strictEqual(isPalindrome(10), false);
+
+  });
+});

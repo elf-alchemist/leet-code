@@ -3,5 +3,11 @@
   "author": "Guilherme M. Miranda <alchemist.software@proton.me>",
   "license": "CC0-1.0",
   "version": "1.0.0",
-  "type": "module"
+  "type": "module",
+  "scripts": {
+    "easy": "node --test src/easy/**.js",
+    "medium": "node --test src/medium/**.js",
+    "hard": "node --test src/hard/**.js",
+    "echo": "cat ./package.json"
+  }
 }

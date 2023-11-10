@@ -1,6 +1,6 @@
 
 //
-// LeetCode chanllenge: 21 - Yet unsolved.
+// LeetCode chanllenge: 21 - Yet unsolved
 //
 
 // You are given the heads of two sorted linked lists `list1` and `list2`.
@@ -25,6 +25,7 @@
 //   `-100 <= Node.val <= 100`
 //   Both `list1` and `list2` are sorted in _non-decreasing_ order.
 
+import { describe, test } from 'node:test';
 import { deepStrictEqual } from 'node:assert';
 
 class ListNode {
@@ -54,17 +55,20 @@ function mergeTwoLists(listNode1, listNode2) {
   let currenctNode = tempNode;
 
   while (listNode1 && listNode2) {
-
+    break;
   }
 
-  return result;
+  return currenctNode;
 };
 
-deepStrictEqual(
-  mergeTwoLists(
-    new ListNode(1, new ListNode(2, new ListNode(4, undefined))),
-    new ListNode(1, new ListNode(3, new ListNode(4, undefined))),
-  ),
-  new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(4, undefined)))))),
-);
-console.log('Successfully passed test 01.');
+describe('LeetCode - 21', { timeout: 1_000 }, () => {
+  test('Case 1', () => {
+
+    const firstInput = new ListNode(1, new ListNode(2, new ListNode(4, undefined)));
+    const secondInput = new ListNode(1, new ListNode(3, new ListNode(4, undefined)));
+
+    const result = mergeTwoLists(firstInput, secondInput);
+
+    deepStrictEqual(result, new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(4, undefined)))))));
+  });
+});

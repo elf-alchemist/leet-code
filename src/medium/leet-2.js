@@ -21,6 +21,7 @@
 //   Input:       l1 = [9, 9, 9, 9, 9, 9, 9], l2 = [9, 9, 9, 9]
 //   Output:      [8, 9, 9, 9, 0, 0, 0, 1]
 
+import { describe, test } from 'node:test';
 import { deepStrictEqual } from 'node:assert';
 
 class ListNode {
@@ -60,11 +61,14 @@ function addTwoNumbers(listNode1, listNode2) {
   return result;
 };
 
-deepStrictEqual(
-  addTwoNumbers(
-    new ListNode(2, new ListNode(4, new ListNode(3, undefined))),
-    new ListNode(5, new ListNode(6, new ListNode(4, undefined))),
-  ),
-  new ListNode(7, new ListNode(0, new ListNode(8, undefined)))
-);
-console.log('Successfully passed test 01.');
+describe('LeetCode - 2', { timeout: 1_000 }, () => {
+  test('Case 1', () => {
+
+    const firstInput = new ListNode(2, new ListNode(4, new ListNode(3, undefined)));
+    const secondInput = new ListNode(5, new ListNode(6, new ListNode(4, undefined)));
+
+    const result = addTwoNumbers(firstInput, secondInput);
+
+    deepStrictEqual(result, new ListNode(7, new ListNode(0, new ListNode(8, undefined))));
+  })
+})

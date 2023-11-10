@@ -1,6 +1,6 @@
 
 //
-// LeetCode challenge: 2667 - Yet unsolved
+// LeetCode challenge: 2667 - Solved
 //
 
 // Write a function createHelloWorld. It should return a new function that always returns "Hello World".
@@ -23,6 +23,8 @@
 
 // Constraints:
 // `0 <= args.length <= 10`
+
+import { describe, test } from 'node:test';
 import { strictEqual } from 'node:assert';
 
 /**
@@ -36,8 +38,11 @@ function createHelloWorld() {
 
 const func = createHelloWorld();
 
-strictEqual(
-  func(),
-  'Hello World',
-);
-console.log('Successfully passed test 01.');
+
+describe('LeetCode - 2667', { timeout: 1_000 }, () => {
+  test('Case 1', () => {
+
+    strictEqual(func(), 'Hello World');
+
+  });
+});

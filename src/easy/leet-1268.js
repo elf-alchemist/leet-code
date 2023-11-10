@@ -30,6 +30,7 @@
 //  `1 <= searchWord.length <= 1000`
 //  `searchWord` consists of lowercase English letters.
 
+import { describe, test } from 'node:test';
 import { deepStrictEqual } from 'node:assert';
 
 /**
@@ -51,33 +52,38 @@ function suggestedProducts(products, searchWord) {
   return result;
 };
 
-const firstInput = ["mobile", "mouse", "moneypot", "monitor", "mousepad"];
-const secondInput = ["havana"];
+describe('LeetCode - 1268', { timeout: 1_000 }, () => {
+  test('Case 1', () => {
 
-const firstSearch = "mouse";
-const secondSearch = "havana";
+    const firstInput = ["mobile", "mouse", "moneypot", "monitor", "mousepad"];
+    const firstSearch = "mouse";
 
-deepStrictEqual(
-  suggestedProducts(firstInput, firstSearch),
-  [
-    ["mobile", "moneypot", "monitor"],
-    ["mobile", "moneypot", "monitor"],
-    ["mouse", "mousepad"],
-    ["mouse", "mousepad"],
-    ["mouse", "mousepad"],
-  ],
-);
-console.log('Successfully passed test 01.');
+    deepStrictEqual(
+      suggestedProducts(firstInput, firstSearch),
+      [
+        ["mobile", "moneypot", "monitor"],
+        ["mobile", "moneypot", "monitor"],
+        ["mouse", "mousepad"],
+        ["mouse", "mousepad"],
+        ["mouse", "mousepad"],
+      ],
+    );
+  });
+  test('Case 2', () => {
 
-deepStrictEqual(
-  suggestedProducts(secondInput, secondSearch),
-  [
-    ["havana"],
-    ["havana"],
-    ["havana"],
-    ["havana"],
-    ["havana"],
-    ["havana"],
-  ],
-);
-console.log('Successfully passed test 02.');
+    const secondInput = ["havana"];
+    const secondSearch = "havana";
+
+    deepStrictEqual(
+      suggestedProducts(secondInput, secondSearch),
+      [
+        ["havana"],
+        ["havana"],
+        ["havana"],
+        ["havana"],
+        ["havana"],
+        ["havana"],
+      ],
+    );
+  });
+});
