@@ -40,18 +40,17 @@ function twoSum(nums, target) {
   return result;
 };
 
-const firstInput = [2, 7, 11, 15];
-const secondInput = [3, 2, 4];
-const thirdInput = [3, 3];
+deepStrictEqual(
+  twoSum([2, 7, 11, 15], 9),
+  [0, 1],
+);
 
-const firstTarget = 9;
-const secondTarget = 6;
-const thirdTarget = 6;
+deepStrictEqual(
+  twoSum([3, 2, 4], 6),
+  [1, 2],
+);
 
-const firstResult = twoSum(firstInput, firstTarget);
-const secondResult = twoSum(secondInput, secondTarget);
-const thirdResult = twoSum(thirdInput, thirdTarget);
-
-deepStrictEqual(firstResult, [0, 1]);
-deepStrictEqual(secondResult, [1, 2]);
-deepStrictEqual(thirdResult, [0, 1]);
+deepStrictEqual(
+  twoSum([3, 3], 6),
+  [0, 1],
+);

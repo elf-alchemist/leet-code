@@ -28,11 +28,18 @@
 import { strictEqual } from 'node:assert';
 
 /**
- * @param {number} x
+ * @param {number} num
  * @return {boolean}
  */
-function isPalindrome(x) {
-  return false;
+function isPalindrome(num) {
+  if ( num < 0 ) return false;
+  const str = String(num);
+
+  for (let index = 0; index < str.length; index++) {
+    if ( str.at(index) !== str.at(-(index + 1)) ) return false;
+  }
+
+  return true;
 }
 
 strictEqual(isPalindrome(121), true);

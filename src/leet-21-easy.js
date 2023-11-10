@@ -24,3 +24,46 @@
 //   The number of nodes in both lists is in the range [0, 50].
 //   `-100 <= Node.val <= 100`
 //   Both `list1` and `list2` are sorted in _non-decreasing_ order.
+
+import { deepStrictEqual } from 'node:assert';
+
+class ListNode {
+  /** @type {number} */
+  value = 0;
+
+  /** @type {ListNode | null} */
+  next = null;
+
+  /**
+   * @param {number | undefined} value
+   * @param {ListNode | undefined} next
+   */
+  constructor(value, next) {
+    this.value = value === undefined ? 0 : value;
+    this.next = next === undefined ? null : next;
+  }
+}
+
+/**
+ * @param {ListNode} listNode1
+ * @param {ListNode} listNode2
+ * @return {ListNode}
+ */
+function mergeTwoLists(listNode1, listNode2) {
+  const tempNode = new ListNode(0, undefined);
+  let currenctNode = tempNode;
+
+  while (listNode1 && listNode2) {
+
+  }
+
+  return result;
+};
+
+deepStrictEqual(
+  mergeTwoLists(
+    new ListNode(1, new ListNode(2, new ListNode(4, undefined))),
+    new ListNode(1, new ListNode(3, new ListNode(4, undefined))),
+  ),
+  new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(4, undefined)))))),
+);

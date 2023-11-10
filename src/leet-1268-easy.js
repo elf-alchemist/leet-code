@@ -49,10 +49,23 @@ const secondSearch = "havana";
 
 deepStrictEqual(
   suggestedProducts(firstInput, firstSearch),
-  [["mobile", "moneypot", "monitor"], ["mobile", "moneypot", "monitor"], ["mouse", "mousepad"], ["mouse", "mousepad"], ["mouse", "mousepad"]],
+  [
+    ["mobile", "moneypot", "monitor"],
+    ["mobile", "moneypot", "monitor"],
+    ["mouse", "mousepad"],
+    ["mouse", "mousepad"],
+    ["mouse", "mousepad"],
+  ],
 );
 
 deepStrictEqual(
   suggestedProducts(secondInput, secondSearch),
-  [["havana"], ["havana"], ["havana"], ["havana"], ["havana"], ["havana"]],
+  [
+    ["havana"],
+    ["havana"],
+    ["havana"],
+    ["havana"],
+    ["havana"],
+    ["havana"],
+  ],
 );

@@ -23,18 +23,20 @@
 
 import { deepStrictEqual } from 'node:assert';
 
-/**
- * @param {number} value
- * @param {ListNode | null} next
- */
 class ListNode {
+  /** @type {number} */
+  value = 0
+
+  /** @type {ListNode | null} */
+  next = null
+
+  /**
+   * @param {number | undefined} value
+   * @param {ListNode | undefined} next
+   */
   constructor(value, next) {
-    /** @type {number} */
     this.value = value === undefined ? 0 : value;
-
-    /** @type {ListNode | null} */
     this.next = next === undefined ? null : next;
-
   }
 }
 
@@ -58,12 +60,10 @@ function addTwoNumbers(listNode1, listNode2) {
   return result;
 };
 
-const result = addTwoNumbers(
-  new ListNode(2, new ListNode(4, new ListNode(3, undefined))),
-  new ListNode(5, new ListNode(6, new ListNode(4, undefined))),
-);
-
 deepStrictEqual(
-  result,
+  addTwoNumbers(
+    new ListNode(2, new ListNode(4, new ListNode(3, undefined))),
+    new ListNode(5, new ListNode(6, new ListNode(4, undefined))),
+  ),
   new ListNode(7, new ListNode(0, new ListNode(8, undefined)))
 );
