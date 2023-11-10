@@ -1,6 +1,6 @@
 
 //
-// LeetCode challenge: 1268 - Yet Unsolved
+// LeetCode challenge: 1268 - Solved
 //
 
 // You are given an array of strings products and a string `searchWord`.
@@ -38,7 +38,17 @@ import { deepStrictEqual } from 'node:assert';
  * @return {Array<Array<string>>}
  */
 function suggestedProducts(products, searchWord) {
-  return [];
+  const result = [];
+  const sortedInput = products.sort();
+  let prefix = '';
+
+  for (let index = 0; index < searchWord.length; index++) {
+    prefix += searchWord[index];
+    const filteredInput = sortedInput.filter((word) => word.startsWith(prefix));
+    result.push(filteredInput.slice(0, 3));
+  }
+
+  return result;
 };
 
 const firstInput = ["mobile", "mouse", "moneypot", "monitor", "mousepad"];
@@ -57,6 +67,7 @@ deepStrictEqual(
     ["mouse", "mousepad"],
   ],
 );
+console.log('Successfully passed test 01.');
 
 deepStrictEqual(
   suggestedProducts(secondInput, secondSearch),
@@ -69,3 +80,4 @@ deepStrictEqual(
     ["havana"],
   ],
 );
+console.log('Successfully passed test 02.');

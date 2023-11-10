@@ -39,4 +39,5 @@ const func = createHelloWorld();
 strictEqual(
   func(),
   'Hello World',
-)
+);
+console.log('Successfully passed test 01.');

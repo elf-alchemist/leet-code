@@ -43,5 +43,10 @@ function isPalindrome(num) {
 }
 
 strictEqual(isPalindrome(121), true);
+console.log('Successfully passed test 01.');
+
 strictEqual(isPalindrome(-121), false);
+console.log('Successfully passed test 02.');
+
 strictEqual(isPalindrome(10), false);
+console.log('Successfully passed test 03.');

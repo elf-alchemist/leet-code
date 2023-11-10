@@ -44,13 +44,16 @@ deepStrictEqual(
   twoSum([2, 7, 11, 15], 9),
   [0, 1],
 );
+console.log('Successfully passed test 01.');
 
 deepStrictEqual(
   twoSum([3, 2, 4], 6),
   [1, 2],
 );
+console.log('Successfully passed test 02.');
 
 deepStrictEqual(
   twoSum([3, 3], 6),
   [0, 1],
 );
+console.log('Successfully passed test 03.');

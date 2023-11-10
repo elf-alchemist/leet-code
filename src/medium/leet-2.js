@@ -67,3 +67,4 @@ deepStrictEqual(
   ),
   new ListNode(7, new ListNode(0, new ListNode(8, undefined)))
 );
+console.log('Successfully passed test 01.');
