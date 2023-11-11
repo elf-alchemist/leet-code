@@ -20,6 +20,7 @@
 // Constraints:
 //   `1 <= nums.length <= 10^5`
 //   `-10^9 <= nums[i] <= 10^9`
+
 import { describe, test } from 'node:test';
 import { strictEqual } from 'node:assert';
 
@@ -28,10 +29,11 @@ import { strictEqual } from 'node:assert';
  * @return {boolean}
  */
 function containsDuplicate(nums) {
-  for (let outerIndex = 0; outerIndex < nums.length; outerIndex++) {
-    for (let innerIndex = outerIndex + 1; innerIndex < nums.length; innerIndex++) {
-      if (nums[outerIndex] === nums[innerIndex]) return true;
-    }
+  /** @type {Set<number>} */
+  const numsSet = new Set();
+  for (let index = 0; index < nums.length; index++) {
+    if (numsSet.has(nums[index])) return true;
+    numsSet.add(nums[index]);
   }
   return false;
 }

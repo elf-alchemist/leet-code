@@ -23,6 +23,7 @@
 //   `-1000 <= n <= 1000`
 //   `0 <= calls.length <= 1000`
 //   `calls[i] === "call"`
+
 import { describe, test } from 'node:test';
 import { strictEqual } from 'node:assert'
 
