@@ -18,27 +18,11 @@ v20.0.0
 Use the `only` script, and specify the problem number id, if non exists, fails.
 
 ```sh
-$ npm run only 1
-
-> leet-code@1.0.0 only
-> _f(){ node --test src/**/$1.js; }; _f 1
-
-▶ LeetCode - 1
-  ✔ Case 1 (1.511306ms)
-  ✔ Case 2 (0.256585ms)
-  ✔ Case 3 (0.202353ms)
-▶ LeetCode - 1 (9.398412ms)
-
-ℹ tests 3
-ℹ suites 1
-ℹ pass 3
-ℹ fail 0
-ℹ cancelled 0
-ℹ skipped 0
-ℹ todo 0
-ℹ duration_ms 124.270823
-
 $ npm run only 217
+```
+
+Result ought to look like this:
+```txt
 
 > leet-code@1.0.0 only
 > _f(){ node --test src/**/$1.js; }; _f 217
@@ -65,6 +49,10 @@ This is the wildcard, only run if a modicum of patience is present.
 
 ```sh
 $ npm run easy
+```
+
+Result might look like:
+```txt
 
 > leet-code@1.0.0 easy
 > node --test src/easy/**.js
