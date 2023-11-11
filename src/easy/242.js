@@ -1,6 +1,6 @@
 
 //
-// LeetCode challenge: 242 - Yet unsolved
+// LeetCode challenge: 242 - Solved
 //
 
 // Given two strings s and t, return true if t is an anagram of s, and false otherwise.
@@ -26,7 +26,10 @@ import { strictEqual } from 'node:assert';
  * @param {string} t
  */
 function isAnagram(s, t) {
-  return true;
+  const sortedS = s.split('').sort().join('');
+  const sortedT = t.split('').sort().join('');
+  if (sortedS === sortedT) return true;
+  return false;
 }
 
 describe('LeetCode - 242', { timeout: 1_000 }, () => {
