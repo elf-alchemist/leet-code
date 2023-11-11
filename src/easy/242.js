@@ -26,10 +26,24 @@ import { strictEqual } from 'node:assert';
  * @param {string} t
  */
 function isAnagram(s, t) {
-  const sortedS = s.split('').sort().join('');
-  const sortedT = t.split('').sort().join('');
-  if (sortedS === sortedT) return true;
-  return false;
+  if (s.length !== t.length) return false;
+
+  /** @type {Map<string, number>} */
+  const sMap = new Map();
+  /** @type {Map<string, number>} */
+  const tMap = new Map();
+
+  for (let index = 0; index < s.length; index++) {
+    const valueS = sMap.get(s[index]) ?? 0;
+    sMap.set(s[index], valueS + 1);
+
+    const valueT = tMap.get(t[index]) ?? 0;
+    tMap.set(t[index], valueT + 1);
+  }
+
+  for (const key of sMap.keys()) if (sMap.get(key) !== tMap.get(key)) return false;
+
+  return true;
 }
 
 describe('LeetCode - 242', { timeout: 1_000 }, () => {
@@ -47,6 +61,14 @@ describe('LeetCode - 242', { timeout: 1_000 }, () => {
     const secondT = 'car';
 
     strictEqual(isAnagram(secondS, secondT), false);
+
+  });
+  test('Case 3', () => {
+
+    const thirdS = '';
+    const thirdT = '';
+
+    strictEqual(isAnagram(thirdS, thirdT), true);
 
   });
 });
