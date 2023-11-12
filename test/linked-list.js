@@ -35,16 +35,24 @@ class LinkedList {
 
   findTail() {
     let curr = this.head;
-    while (curr.next !== null) curr = curr.next;
+    while (curr.next) curr = curr.next;
     return curr.value;
   }
 
   /** @param {number} index */
   findIndex(index) {
-    let count = 0;
-    let curr = this.head;
+    if (index < 0) return;
+    if (index >= this.size) return;
 
-    while (count++ < index) curr = curr.next;
+    if (index === 0) {
+      return this.head.value;
+    }
+
+    /** @type {LinkedListNode} */
+    let curr = this.head;
+    let count = 0;
+
+    while (index > count++ && curr.next) curr = curr.next;
 
     return curr.value;
   }
@@ -52,7 +60,7 @@ class LinkedList {
   /** @param {number} value  */
   insertHead(value) {
     this.head = new LinkedListNode(value, this.head);
-    this.countSize();
+    this.size++;
     return;
   }
 
@@ -61,10 +69,10 @@ class LinkedList {
     const node = new LinkedListNode(value, undefined);
     let curr = this.head;
 
-    while (curr.next !== null) curr = curr.next;
+    while (curr.next) curr = curr.next;
     curr.next = node;
 
-    this.countSize();
+    this.size++;
     return;
   }
 
@@ -82,50 +90,42 @@ class LinkedList {
       return;
     }
 
-
     let curr = this.head;
-    let prev = undefined;
+    let prev = this.head;
 
     let count = 0;
-    while (count < index) {
+    while (index > count++ && curr.next) {
       prev = curr;
-      count++;
       curr = curr.next;
     }
 
     const node = new LinkedListNode(value, curr);
     prev.next = node;
 
-    this.countSize();
-
+    this.size++;
     return;
   }
 
   toArray() {
-    const result = [];
+    /** @type {LinkedListNode} */
     let curr = this.head;
+    const result = [];
 
-    while (curr) {
-      result.push(curr.value);
-      curr = curr.next;
-    }
+    while (curr.next) result.push(curr.value) && (curr = curr.next);
+    result.push(curr.value)
 
     this.countSize();
     return result;
   }
 
   countSize() {
-    this.size = 0
-    let size = 0;
     let curr = this.head;
 
-    while (curr) {
-      size++
-      curr = curr.next;
-    }
+    this.size = 0;
+    while (curr.next) (curr = curr.next) && this.size++;
+    this.size++;
 
-    this.size = size;
-    return size;
+    return this.size;
   }
 
   clear() {
@@ -135,6 +135,20 @@ class LinkedList {
 }
 
 describe('Linked List', () => {
+  test('Counting size correctly', () => {
+
+    const list = new LinkedList(undefined);
+    list.insertTail(1);
+    list.insertTail(2);
+    list.insertTail(3);
+    list.insertTail(4);
+    list.insertTail(5);
+
+    const value = list.countSize();
+
+    strictEqual(value, 6);
+
+  });
   test('Return head correctly', () => {
 
     const list = new LinkedList(undefined);

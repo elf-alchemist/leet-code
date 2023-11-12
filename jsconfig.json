@@ -6,6 +6,8 @@
     "moduleResolution": "NodeNext",
     "allowJs": true,
     "checkJs": true,
+    "alwaysStrict": true,
+    "strictNullChecks": true,
   },
   "include": ["./src/**/*.js", "./test/**/*.js"],
   "exclude": ["node_modules", "**/node_modules/*", "dist", "**/dist/*"]
