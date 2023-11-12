@@ -43,15 +43,11 @@ class LinkedList {
   findIndex(index) {
     if (index < 0) return;
     if (index >= this.size) return;
+    if (index === 0) return this.head.value;
 
-    if (index === 0) {
-      return this.head.value;
-    }
-
-    /** @type {LinkedListNode} */
     let curr = this.head;
-    let count = 0;
 
+    let count = 0;
     while (index > count++ && curr.next) curr = curr.next;
 
     return curr.value;
@@ -83,10 +79,8 @@ class LinkedList {
   insertIndex(value, index) {
     if (index < 0) return;
     if (index >= this.size) return;
-
     if (index === 0) {
-      const node = new LinkedListNode(value, this.head);
-      this.head = node;
+      this.head = new LinkedListNode(value, this.head);
       return;
     }
 
@@ -106,13 +100,61 @@ class LinkedList {
     return;
   }
 
+  removeHead() {
+    if (this.head.next) {
+      this.head = this.head.next;
+      this.size--
+    }
+  }
+
+  removeTail() {
+    let curr = this.head;
+
+
+    while (curr.next) {
+      if (curr.next.next === null) {
+        curr.next = null;
+        this.size--;
+        break;
+      }
+      curr = curr.next;
+    }
+
+    return;
+  }
+
+  /**
+   * @param {number} index
+   * */
+  removeIndex(index) {
+    if (index < 0) return;
+    if (index >= this.size) return;
+    if (index === 0) return;
+
+    let curr = this.head;
+    let prev = this.head;
+
+    let count = 0;
+    while (index > count++ && curr.next) {
+      prev = curr;
+      curr = curr.next;
+    }
+
+    prev.next = curr.next;
+
+    this.size--;
+    return;
+  }
+
   toArray() {
-    /** @type {LinkedListNode} */
     let curr = this.head;
     const result = [];
 
-    while (curr.next) result.push(curr.value) && (curr = curr.next);
-    result.push(curr.value)
+    while (curr.next) {
+      result.push(curr.value);
+      curr = curr.next;
+    }
+    result.push(curr.value);
 
     this.countSize();
     return result;
@@ -122,10 +164,12 @@ class LinkedList {
     let curr = this.head;
 
     this.size = 0;
-    while (curr.next) (curr = curr.next) && this.size++;
-    this.size++;
+    while (curr.next) {
+      curr = curr.next;
+      this.size++;
+    }
 
-    return this.size;
+    return ++this.size;
   }
 
   clear() {
