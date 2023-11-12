@@ -34,10 +34,14 @@ function isAnagram(s, t) {
   const tMap = new Map();
 
   for (let index = 0; index < s.length; index++) {
+    // @ts-ignore
     const valueS = sMap.get(s[index]) ?? 0;
+    // @ts-ignore
     sMap.set(s[index], valueS + 1);
 
+    // @ts-ignore
     const valueT = tMap.get(t[index]) ?? 0;
+    // @ts-ignore
     tMap.set(t[index], valueT + 1);
   }
 

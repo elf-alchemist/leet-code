@@ -29,6 +29,7 @@ import { strictEqual } from 'node:assert';
  * @return {Function}
  */
 function createHelloWorld() {
+  /** @param {Array<unknown>} args */
   return function(...args) {
     return 'Hello World';
   };

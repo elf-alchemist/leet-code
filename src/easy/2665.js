@@ -36,8 +36,8 @@ import { describe, test } from 'node:test';
 import { deepStrictEqual } from 'node:assert';
 
 /**
- * @param {integer} init
- * @return { increment: Function, decrement: Function, reset: Function }
+ * @param {number} init
+ * @return {{ increment: Function, decrement: Function, reset: Function }}
  */
 function createCounter(init) {
   let value = init;

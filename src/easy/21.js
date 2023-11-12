@@ -40,8 +40,8 @@ class ListNode {
    * @param {ListNode | undefined} next
    */
   constructor(value, next) {
-    this.value = value === undefined ? 0 : value;
-    this.next = next === undefined ? null : next;
+    this.value = value ?? 0;
+    this.next = next ?? null;
   }
 }
 
@@ -54,7 +54,7 @@ function mergeTwoLists(listNode1, listNode2) {
   const tempNode = new ListNode(0, undefined);
   let currenctNode = tempNode;
 
-  while (listNode1 && listNode2) {
+  while (listNode1 || listNode2) {
     break;
   }
 

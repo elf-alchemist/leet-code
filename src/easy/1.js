@@ -26,15 +26,18 @@ import { deepStrictEqual } from 'node:assert';
 /**
  * @param {Array<number>} nums
  * @param {number} target
- * @return {[number, number]}
+ * @return {[number, number] | void}
  */
 function twoSum(nums, target) {
   /** @type {Map<number, number>} */
   const numsMap = new Map();
+  let result = [0, 0]
   for (let index = 0; index < nums.length; index++) {
+    // @ts-ignore
     const diff = target - nums[index];
     const exists = numsMap.get(diff);
-    if (exists !== undefined) return [exists, index];
+    if (exists !== undefined) result=  [exists, index];
+    // @ts-ignore
     numsMap.set(nums[index], index)
   }
 };

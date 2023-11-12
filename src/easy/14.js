@@ -30,7 +30,9 @@ import { strictEqual } from 'node:assert';
 function longestCommonPrefix(strs) {
   let result = '';
 
+  // @ts-ignore
   for (let index = 0; index < strs[0].length; index++) {
+    // @ts-ignore
     if (strs.every((str) => str[index] === strs[0][index])) result += strs[0][index];
     else break;
   }

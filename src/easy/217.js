@@ -32,7 +32,9 @@ function containsDuplicate(nums) {
   /** @type {Set<number>} */
   const numsSet = new Set();
   for (let index = 0; index < nums.length; index++) {
+    // @ts-ignore
     if (numsSet.has(nums[index])) return true;
+    // @ts-ignore
     numsSet.add(nums[index]);
   }
   return false;

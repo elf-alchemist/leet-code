@@ -50,15 +50,15 @@ function addTwoNumbers(listNode1, listNode2) {
   let result = undefined;
 
   while (listNode1 || listNode2) {
-    if (listNode1) {
+    if (listNode1.next) {
       listNode1 = listNode1.next
     }
-    if (listNode2) {
+    if (listNode2.next) {
       listNode2 = listNode2.next
     }
   }
 
-  return result;
+  return new ListNode(2, undefined);
 };
 
 describe('LeetCode - 2', () => {
