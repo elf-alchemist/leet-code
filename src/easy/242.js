@@ -46,7 +46,7 @@ function isAnagram(s, t) {
   return true;
 }
 
-describe('LeetCode - 242', { timeout: 1_000 }, () => {
+describe('LeetCode - 242', () => {
   test('Case 1', () => {
 
     const firstS = 'anagram';

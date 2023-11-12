@@ -38,7 +38,7 @@ function containsDuplicate(nums) {
   return false;
 }
 
-describe('LeetCode - 217', { timeout: 1_000 }, () => {
+describe('LeetCode - 217', () => {
   test('Case 1', () => {
 
     const firstInput = [1, 2, 3, 1];

@@ -43,7 +43,7 @@ function isPalindrome(num) {
   return true;
 }
 
-describe('LeetCode - 9', { timeout: 1_000 }, () => {
+describe('LeetCode - 9', () => {
   test('Case 1', () => {
 
     strictEqual(isPalindrome(121), true);

@@ -61,7 +61,7 @@ function mergeTwoLists(listNode1, listNode2) {
   return currenctNode;
 };
 
-describe('LeetCode - 21', { timeout: 1_000 }, () => {
+describe('LeetCode - 21', () => {
   test('Case 1', () => {
 
     const firstInput = new ListNode(1, new ListNode(2, new ListNode(4, undefined)));

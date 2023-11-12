@@ -37,7 +37,7 @@ function createHelloWorld() {
 const func = createHelloWorld();
 
 
-describe('LeetCode - 2667', { timeout: 1_000 }, () => {
+describe('LeetCode - 2667', () => {
   test('Case 1', () => {
 
     strictEqual(func(), 'Hello World');

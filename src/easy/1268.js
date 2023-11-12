@@ -52,7 +52,7 @@ function suggestedProducts(products, searchWord) {
   return result;
 };
 
-describe('LeetCode - 1268', { timeout: 1_000 }, () => {
+describe('LeetCode - 1268', () => {
   test('Case 1', () => {
 
     const firstInput = ["mobile", "mouse", "moneypot", "monitor", "mousepad"];

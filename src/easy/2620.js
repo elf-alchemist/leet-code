@@ -38,7 +38,7 @@ function createCounter(n) {
   };
 };
 
-describe('LeetCode - 2620', {}, () => {
+describe('LeetCode - 2620', () => {
   test('Case 1', () => {
     const func = createCounter(10)
 

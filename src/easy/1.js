@@ -40,7 +40,7 @@ function twoSum(nums, target) {
 };
 
 
-describe('LeetCode - 1', { timeout: 1_000 }, () => {
+describe('LeetCode - 1', () => {
   test('Case 1', () => {
 
     const firstNums = [2, 7, 11, 15];

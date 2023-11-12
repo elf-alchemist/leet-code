@@ -13,5 +13,8 @@
     "medium": "node --test src/medium/**.js",
     "hard": "node --test src/hard/**.js",
     "echo": "cat ./package.json"
+  },
+  "dependencies": {
+    "@types/node": "^20.9.0"
   }
 }

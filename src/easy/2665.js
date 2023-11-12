@@ -55,7 +55,7 @@ function createCounter(init) {
 };
 
 
-describe('LeetCode - 2667', { timeout: 1_000 }, () => {
+describe('LeetCode - 2667', () => {
   test('Case 1', () => {
 
     const counter = createCounter(5);

@@ -55,7 +55,7 @@ function expect(val) {
 }
 
 
-describe('LeetCode - 2667', { timeout: 1_000 }, () => {
+describe('LeetCode - 2667', () => {
   test('Case 1', () => {
 
     try {

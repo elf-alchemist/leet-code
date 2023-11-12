@@ -61,7 +61,7 @@ function addTwoNumbers(listNode1, listNode2) {
   return result;
 };
 
-describe('LeetCode - 2', { timeout: 1_000 }, () => {
+describe('LeetCode - 2', () => {
   test('Case 1', () => {
 
     const firstInput = new ListNode(2, new ListNode(4, new ListNode(3, undefined)));

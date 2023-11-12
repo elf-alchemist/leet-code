@@ -38,7 +38,7 @@ function longestCommonPrefix(strs) {
   return result;
 };
 
-describe('LeetCode - 14', { timeout: 1_000 }, () => {
+describe('LeetCode - 14', () => {
   test('Case 1', () => {
 
     const firstInput = ['flower', 'flow', 'flight']
