@@ -9,6 +9,7 @@
   },
   "scripts": {
     "only": "_f() { node --test src/**/$1.js; echo '\n'; }; _f",
+    "test": "_f() { node --test test/**/$1.js; echo '\n'; }; _f",
     "easy": "node --test src/easy/**.js",
     "medium": "node --test src/medium/**.js",
     "hard": "node --test src/hard/**.js",
