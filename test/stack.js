@@ -1,5 +1,5 @@
 import { describe, test } from 'node:test';
-import { notStrictEqual, strictEqual } from 'node:assert';
+import { strictEqual } from 'node:assert';
 
 class Stack {
   constructor() {
@@ -18,7 +18,7 @@ class Stack {
   }
 
   pop() {
-    const element = this.list[this.size];
+    const element = this.list[this.size - 1];
     if (element === undefined) return undefined;
     this.size--;
     return element;
@@ -26,6 +26,11 @@ class Stack {
 
   peek() {
     return this.list[this.size - 1];
+  }
+
+  clear() {
+    this.list = [];
+    this.size = 0
   }
 
   length() {
@@ -59,10 +64,18 @@ describe('Stack', () => {
 
     strictEqual(value, undefined);
   });
-  test('Push non-empty correctly', () => {
+  test('Push empty correctly', () => {
     const stack = new Stack();
-
     stack.push(0);
+
+    const value = stack.peek();
+
+    strictEqual(value, 0);
+  });
+  test('Is non-empty correctly', () => {
+    const stack = new Stack();
+    stack.push(0);
+
     const value = stack.isEmpty();
 
     strictEqual(value, false);
@@ -73,7 +86,7 @@ describe('Stack', () => {
 
     const value = stack.peek();
 
-    notStrictEqual(value, undefined);
+    strictEqual(value, 0);
   });
   test('Push non-empty correctly', () => {
     const stack = new Stack();
@@ -81,8 +94,21 @@ describe('Stack', () => {
     stack.push(1);
     stack.push(2);
     stack.push(3);
+
     const value = stack.peek();
 
-    notStrictEqual(value, undefined);
+    strictEqual(value, 3);
+  });
+  test('Pop non-empty correctly', () => {
+    const stack = new Stack();
+    stack.push(0);
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+    stack.pop();
+
+    const value = stack.peek();
+
+    strictEqual(value, 2);
   });
 });
