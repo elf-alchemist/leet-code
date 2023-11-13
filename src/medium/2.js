@@ -49,13 +49,8 @@ class ListNode {
 function addTwoNumbers(listNode1, listNode2) {
   let result = new ListNode(1, undefined);
 
-  while (listNode1 || listNode2) {
-    if (listNode1.next) {
-      listNode1 = listNode1.next
-    }
-    if (listNode2.next) {
-      listNode2 = listNode2.next
-    }
+  while (true) {
+    break;
   }
 
   return result;
