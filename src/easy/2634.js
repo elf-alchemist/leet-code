@@ -44,8 +44,13 @@ import { deepStrictEqual } from 'node:assert';
  * @return {Array<number>}
  */
 function filter(arr, fn) {
-  /** @type {Array<number>} */
   const result = [];
+
+  for (let index = 0; index < arr.length; index++) {
+    const num = arr[index];
+    if (num === undefined) continue;
+    if (fn(num, index)) result.push(num);
+  }
 
   return result;
 };

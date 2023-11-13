@@ -35,13 +35,14 @@ import { deepStrictEqual } from 'node:assert';
 
 /**
  * @param {Array<number>} arr
- * @param {Function} fn
+ * @param {(n: number, index: number) => number} fn
  */
 function map(arr, fn) {
-  /** @type {Array<number>} */
   const result = [];
 
-  for (const [index, num] of arr.entries()) {
+  for (let index = 0; index < arr.length; index++) {
+    const num = arr[index];
+    if (num === undefined) continue;
     const value = fn(num, index);
     result.push(value);
   }
