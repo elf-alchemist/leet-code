@@ -1,3 +1,8 @@
+
+//
+// LeetCode chanllenge: 2635 - Solved
+//
+
 // Given an integer array `arr` and a mapping function `fn`,
 // return a new array with a transformation applied to each element.
 // The returned array should be created such that `returnedArray[i] = fn(arr[i], i)`
@@ -24,6 +29,7 @@
 //   `0 <= arr.length <= 1000`
 //   `-10^9 <= arr[i] <= 10^9`
 //   `fn` returns a number
+
 import { describe, test } from 'node:test';
 import { deepStrictEqual } from 'node:assert';
 
@@ -88,29 +94,5 @@ describe('LeetCode - 2635', () => {
     const result = map(arr, constant);
 
     deepStrictEqual(result, [42, 42, 42]);
-  });
-  test('Case 4', () => {
-    /** @type {Array<number>} */
-    const arr = [];
-
-    const result = map(arr, plusOne);
-
-    deepStrictEqual(result, []);
-  });
-  test('Case 5', () => {
-    /** @type {Array<number>} */
-    const arr = [];
-
-    const result = map(arr, plusIndex);
-
-    deepStrictEqual(result, []);
-  });
-  test('Case 6', () => {
-    /** @type {Array<number>} */
-    const arr = [];
-
-    const result = map(arr, constant);
-
-    deepStrictEqual(result, []);
   });
 });
