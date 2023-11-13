@@ -4,7 +4,7 @@
 In this here repository lay me solutions of many a LeetCode dilemmas.
 
 ```
-![LeetCode Stats](https://leetcard.jacoblin.cool/elf-alchemist?theme=dark&font=Fira%20Codeanimation=false)
+![LeetCode Stats](https://leetcard.jacoblin.cool/elf-alchemist?theme=dark&font=Fira%20Code)
 
 ## Running on your own machine
 Make sure your `node` CLI is up to the date. At least `v20.0.0`, otherwise no other packages are needed.
