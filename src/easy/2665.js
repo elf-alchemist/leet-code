@@ -1,6 +1,6 @@
 
 //
-// LeetCode challenge: 2665 - Solved
+// LeetCode 2665 - Solved
 //
 
 // Write a function createCounter.

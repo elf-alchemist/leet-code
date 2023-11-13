@@ -1,6 +1,6 @@
 
 //
-// LeetCode chanllenge: 2635 - Solved
+// LeetCode 2635 - Solved
 //
 
 // Given an integer array `arr` and a mapping function `fn`,

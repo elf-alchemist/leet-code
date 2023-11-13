@@ -1,6 +1,6 @@
 
 //
-// LeetCode challenge: 14 - Solved
+// LeetCode 14 - Solved
 //
 
 // Write a function to find the longest common prefix string amongst an array of strings.

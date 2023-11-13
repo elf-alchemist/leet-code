@@ -1,6 +1,6 @@
 
 //
-// LeetCode challenge: 2704 - Solved
+// LeetCode 2704 - Solved
 //
 
 // Write a function expect that helps developers test their code.

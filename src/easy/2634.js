@@ -1,6 +1,6 @@
 
 //
-// LeetCode chanllenge: 2634 - Solved
+// LeetCode 2634 - Solved
 //
 
 // Given an integer array arr and a filtering function fn,

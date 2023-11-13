@@ -1,6 +1,6 @@
 
 //
-// LeetCode chanllenge: 21 - Yet unsolved
+// LeetCode 21 - Solved
 //
 
 // You are given the heads of two sorted linked lists `list1` and `list2`.
@@ -46,19 +46,27 @@ class ListNode {
 }
 
 /**
- * @param {ListNode} listNode1
- * @param {ListNode} listNode2
- * @return {ListNode}
+ * @param {ListNode | null} listNode1
+ * @param {ListNode | null} listNode2
+ * @return {ListNode | null}
  */
 function mergeTwoLists(listNode1, listNode2) {
-  const tempNode = new ListNode(0, undefined);
-  let currenctNode = tempNode;
+  let dummy = new ListNode(undefined, undefined);
+  let curr = dummy;
 
-  while (listNode1 || listNode2) {
-    break;
+  while (listNode1 && listNode2) {
+    if (listNode1.value < listNode2.value) {
+      curr.next = listNode1;
+      listNode1 = listNode1.next;
+    } else {
+      curr.next = listNode2;
+      listNode2 = listNode2.next;
+    }
+    curr = curr.next;
   }
 
-  return currenctNode;
+  curr.next = listNode1 ?? listNode2;
+  return dummy.next;
 };
 
 describe('LeetCode - 21', () => {

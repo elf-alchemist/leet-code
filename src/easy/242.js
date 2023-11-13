@@ -1,6 +1,6 @@
 
 //
-// LeetCode challenge: 242 - Solved
+// LeetCode 242 - Solved
 //
 
 // Given two strings s and t, return true if t is an anagram of s, and false otherwise.

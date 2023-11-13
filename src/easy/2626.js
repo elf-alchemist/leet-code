@@ -1,6 +1,6 @@
 
 //
-// LeetCode challenge: 2626 - Yet unsolved
+// LeetCode 2626 - Yet unsolved
 //
 
 // Given an integer array `nums`, a reducer function `fn`,

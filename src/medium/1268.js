@@ -1,6 +1,6 @@
 
 //
-// LeetCode challenge: 1268 - Solved
+// LeetCode 1268 - Solved
 //
 
 // You are given an array of strings products and a string `searchWord`.

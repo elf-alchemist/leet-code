@@ -1,6 +1,6 @@
 
 //
-// LeetCode challenge: 2620 - Solved
+// LeetCode 2620 - Solved
 //
 
 // Given an integer n, return a counter function.
