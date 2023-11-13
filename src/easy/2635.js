@@ -25,7 +25,7 @@
 //   `-10^9 <= arr[i] <= 10^9`
 //   `fn` returns a number
 import { describe, test } from 'node:test';
-import { deepStrictEqual, strictEqual } from 'node:assert';
+import { deepStrictEqual } from 'node:assert';
 
 /**
  * @param {Array<number>} arr
@@ -35,11 +35,19 @@ function map(arr, fn) {
   /** @type {Array<number>} */
   const result = [];
 
+  for (const [index, num] of arr.entries()) {
+    const value = fn(num, index);
+    result.push(value);
+  }
+
   return result;
 }
 
-/** @param {number} n */
-function plusOne(n) {
+/**
+ * @param {number} n
+ * @param {number} i
+ */
+function plusOne(n, i) {
   return n + 1;
 }
 
@@ -50,8 +58,12 @@ function plusOne(n) {
 function plusIndex(n, i) {
   return n + i;
 }
-/** @param {number} n  */
-function constant(n) {
+
+/**
+ * @param {number} n
+ * @param {number} i
+ */
+function constant(n, i) {
   return 42;
 }
 
@@ -76,5 +88,29 @@ describe('LeetCode - 2635', () => {
     const result = map(arr, constant);
 
     deepStrictEqual(result, [42, 42, 42]);
+  });
+  test('Case 4', () => {
+    /** @type {Array<number>} */
+    const arr = [];
+
+    const result = map(arr, plusOne);
+
+    deepStrictEqual(result, []);
+  });
+  test('Case 5', () => {
+    /** @type {Array<number>} */
+    const arr = [];
+
+    const result = map(arr, plusIndex);
+
+    deepStrictEqual(result, []);
+  });
+  test('Case 6', () => {
+    /** @type {Array<number>} */
+    const arr = [];
+
+    const result = map(arr, constant);
+
+    deepStrictEqual(result, []);
   });
 });
