@@ -47,7 +47,7 @@ class ListNode {
  * @return {ListNode}
  */
 function addTwoNumbers(listNode1, listNode2) {
-  let result = undefined;
+  let result = new ListNode(1, undefined);
 
   while (listNode1 || listNode2) {
     if (listNode1.next) {
@@ -58,7 +58,7 @@ function addTwoNumbers(listNode1, listNode2) {
     }
   }
 
-  return new ListNode(2, undefined);
+  return result;
 };
 
 describe('LeetCode - 2', () => {
