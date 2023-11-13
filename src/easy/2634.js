@@ -79,7 +79,7 @@ function plusOne(n, i) {
   return n + 1;
 }
 
-describe('LeetCode - 2635', () => {
+describe('LeetCode - 2634', () => {
   test('Case 1', () => {
     const arr = [0, 10, 20, 30];
 
