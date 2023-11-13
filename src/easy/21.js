@@ -29,19 +29,15 @@ import { describe, test } from 'node:test';
 import { deepStrictEqual } from 'node:assert';
 
 class ListNode {
-  /** @type {number} */
-  value = 0;
-
-  /** @type {ListNode | null} */
-  next = null;
-
   /**
    * @param {number | undefined} value
-   * @param {ListNode | undefined} next
+   * @param {ListNode | null | undefined} next
    */
   constructor(value, next) {
-    this.value = value ?? 0;
-    this.next = next ?? null;
+    /** @type {number} next */
+    this.value = value === undefined ? 0 : value;
+    /** @type {ListNode | null} next */
+    this.next = next === undefined ? null : next;
   }
 }
 
@@ -51,7 +47,7 @@ class ListNode {
  * @return {ListNode | null}
  */
 function mergeTwoLists(listNode1, listNode2) {
-  let dummy = new ListNode(undefined, undefined);
+  let dummy = new ListNode(0, null);
   let curr = dummy;
 
   while (listNode1 && listNode2) {
@@ -65,7 +61,7 @@ function mergeTwoLists(listNode1, listNode2) {
     curr = curr.next;
   }
 
-  curr.next = listNode1 ?? listNode2;
+  curr.next = listNode1 || listNode2;
   return dummy.next;
 };
 
@@ -78,5 +74,18 @@ describe('LeetCode - 21', () => {
     const result = mergeTwoLists(firstInput, secondInput);
 
     deepStrictEqual(result, new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(4, undefined)))))));
+  });
+  test('Case 2', () => {
+
+    const secondInput = new ListNode(0, undefined);
+
+    const result = mergeTwoLists(null, secondInput);
+
+    deepStrictEqual(result, new ListNode(0,  undefined));
+  });
+  test('Case 3', () => {
+    const result = mergeTwoLists(null, null);
+
+    deepStrictEqual(result, null);
   });
 });

@@ -24,6 +24,20 @@
 import { describe, test } from 'node:test';
 import { deepStrictEqual } from 'node:assert';
 
+/** @param {ListNode} head */
+function toArray(head) {
+  let curr = head;
+  const result = [];
+
+  while (curr.next) {
+    result.push(curr.value);
+    curr = curr.next;
+  }
+  result.push(curr.value);
+
+  return result;
+}
+
 class ListNode {
   /** @type {number} */
   value = 0
@@ -33,7 +47,7 @@ class ListNode {
 
   /**
    * @param {number | undefined} value
-   * @param {ListNode | undefined} next
+   * @param {ListNode | null | undefined} next
    */
   constructor(value, next) {
     this.value = value === undefined ? 0 : value;
@@ -42,28 +56,70 @@ class ListNode {
 }
 
 /**
- * @param {ListNode} listNode1
- * @param {ListNode} listNode2
- * @return {ListNode}
+ * @param {ListNode | null} listNode1
+ * @param {ListNode | null} listNode2
+ * @return {ListNode | null}
  */
 function addTwoNumbers(listNode1, listNode2) {
-  let result = new ListNode(1, undefined);
+  let head = new ListNode(0, undefined);
+  let curr = head;
+  let carry = 0;
+  let sum = 0;
+  let value1 = 0;
+  let value2 = 0;
 
-  while (true) {
-    break;
+  while (listNode1 || listNode2) {
+    if (listNode1) {
+      value1 = listNode1.value;
+      listNode1 = listNode1.next;
+    }
+    if (listNode2) {
+      value2 = listNode2.value;
+      listNode2 = listNode2.next;
+    }
+    sum = value1 + value2 + carry;
+    carry = Math.floor(sum / 10);
+    sum = sum % 10
   }
 
-  return result;
+  return head.next;
 };
 
 describe('LeetCode - 2', () => {
   test('Case 1', () => {
 
-    const firstInput = new ListNode(2, new ListNode(4, new ListNode(3, undefined)));
-    const secondInput = new ListNode(5, new ListNode(6, new ListNode(4, undefined)));
+    const firstInput = new ListNode(2, new ListNode(4, new ListNode(3, null)));
+    const secondInput = new ListNode(5, new ListNode(6, new ListNode(4, null)));
 
     const result = addTwoNumbers(firstInput, secondInput);
 
-    deepStrictEqual(result, new ListNode(7, new ListNode(0, new ListNode(8, undefined))));
-  })
-})
+    deepStrictEqual(result, new ListNode(7, new ListNode(0, new ListNode(8, null))));
+  });
+  test('Case 2', () => {
+
+    const firstInput = new ListNode(0, null);
+    const secondInput = new ListNode(0, null);
+
+    const result = addTwoNumbers(firstInput, secondInput);
+
+    deepStrictEqual(result, new ListNode(0, null));
+  });
+  test('Case 3', () => {
+
+    const firstInput = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, null)))))));
+    const secondInput = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, null))));
+
+    const result = addTwoNumbers(firstInput, secondInput);
+
+    let node = new ListNode(1, null);
+    node = new ListNode(0, node);
+    node = new ListNode(0, node);
+    node = new ListNode(0, node);
+    node = new ListNode(9, node);
+    node = new ListNode(9, node);
+    node = new ListNode(9, node);
+    node = new ListNode(8, node);
+
+    deepStrictEqual(result, node);
+  });
+});
