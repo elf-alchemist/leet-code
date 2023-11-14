@@ -1,13 +1,12 @@
 export class ListNode {
-  /** @type {number} */ value = 0;
-  /** @type {ListNode | null} */ next = null;
-
   /**
-   * @param {number | undefined} value
+   * @param {number | undefined} val
    * @param {ListNode | null | undefined} next
    */
-  constructor(value, next) {
-    this.value = value === undefined ? 0 : value;
+  constructor(val, next) {
+    /** @type {number} */
+    this.val = val === undefined ? 0 : val;
+    /** @type {ListNode | null} */
     this.next = next === undefined ? null : next;
   }
 }
@@ -18,7 +17,7 @@ export function listToArray(head) {
   const result = [];
 
   while (curr) {
-    result.push(curr.value);
+    result.push(curr.val);
     curr = curr.next;
   }
 

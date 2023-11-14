@@ -30,7 +30,16 @@ import { ListNode, listFromArray } from '../lib.js';
  * @return {ListNode | null}
  */
 function reverseList(head) {
-  return head;
+  /** @type {ListNode | null} */
+  let prev = null;
+  let curr = head;
+
+  while (curr !== null) {
+    prev = new ListNode(curr.val, prev);
+    curr = curr.next;
+  }
+
+  return prev;
 };
 
 describe('LeetCode - 206', () => {

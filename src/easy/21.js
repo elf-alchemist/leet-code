@@ -27,20 +27,7 @@
 
 import { describe, test } from 'node:test';
 import { deepStrictEqual } from 'node:assert';
-import { listFromArray } from '../lib.js';
-
-class ListNode {
-  /**
-   * @param {number | undefined} value
-   * @param {ListNode | null | undefined} next
-   */
-  constructor(value, next) {
-    /** @type {number} next */
-    this.value = value === undefined ? 0 : value;
-    /** @type {ListNode | null} next */
-    this.next = next === undefined ? null : next;
-  }
-}
+import { ListNode, listFromArray } from '../lib.js';
 
 /**
  * @param {ListNode | null} listNode1
@@ -52,7 +39,7 @@ function mergeTwoLists(listNode1, listNode2) {
   let curr = dummy;
 
   while (listNode1 && listNode2) {
-    if (listNode1.value < listNode2.value) {
+    if (listNode1.val < listNode2.val) {
       curr.next = listNode1;
       listNode1 = listNode1.next;
     } else {

@@ -3,13 +3,13 @@ import { deepStrictEqual, strictEqual } from 'node:assert';
 
 class LinkedListNode {
   /**
-   * @param {number | undefined} value
+   * @param {number | undefined} val
    * @param {LinkedListNode | undefined} next
    */
-  constructor(value, next) {
+  constructor(val, next) {
 
     /** @type {number} */
-    this.value = value ?? 0;
+    this.val = val ?? 0;
 
     /** @type {LinkedListNode | null} */
     this.next = next ?? null;
@@ -30,39 +30,39 @@ class LinkedList {
   }
 
   findHead() {
-    return this.head.value;
+    return this.head.val;
   }
 
   findTail() {
     let curr = this.head;
     while (curr.next) curr = curr.next;
-    return curr.value;
+    return curr.val;
   }
 
   /** @param {number} index */
   findIndex(index) {
     if (index < 0) return;
     if (index >= this.size) return;
-    if (index === 0) return this.head.value;
+    if (index === 0) return this.head.val;
 
     let curr = this.head;
 
     let count = 0;
     while (index > count++ && curr.next) curr = curr.next;
 
-    return curr.value;
+    return curr.val;
   }
 
-  /** @param {number} value  */
-  insertHead(value) {
-    this.head = new LinkedListNode(value, this.head);
+  /** @param {number} val  */
+  insertHead(val) {
+    this.head = new LinkedListNode(val, this.head);
     this.size++;
     return;
   }
 
-  /** @param {number} value  */
-  insertTail(value) {
-    const node = new LinkedListNode(value, undefined);
+  /** @param {number} val  */
+  insertTail(val) {
+    const node = new LinkedListNode(val, undefined);
     let curr = this.head;
 
     while (curr.next) curr = curr.next;
@@ -73,14 +73,14 @@ class LinkedList {
   }
 
   /**
-   * @param {number} value
+   * @param {number} val
    * @param {number} index
    * */
-  insertIndex(value, index) {
+  insertIndex(val, index) {
     if (index < 0) return;
     if (index >= this.size) return;
     if (index === 0) {
-      this.head = new LinkedListNode(value, this.head);
+      this.head = new LinkedListNode(val, this.head);
       return;
     }
 
@@ -93,7 +93,7 @@ class LinkedList {
       curr = curr.next;
     }
 
-    const node = new LinkedListNode(value, curr);
+    const node = new LinkedListNode(val, curr);
     prev.next = node;
 
     this.size++;
@@ -151,10 +151,10 @@ class LinkedList {
     const result = [];
 
     while (curr.next) {
-      result.push(curr.value);
+      result.push(curr.val);
       curr = curr.next;
     }
-    result.push(curr.value);
+    result.push(curr.val);
 
     this.countSize();
     return result;

@@ -23,24 +23,7 @@
 
 import { describe, test } from 'node:test';
 import { deepStrictEqual } from 'node:assert';
-import { listFromArray } from '../lib.js';
-
-class ListNode {
-  /** @type {number} */
-  value = 0
-
-  /** @type {ListNode | null} */
-  next = null
-
-  /**
-   * @param {number | undefined} value
-   * @param {ListNode | null | undefined} next
-   */
-  constructor(value, next) {
-    this.value = value === undefined ? 0 : value;
-    this.next = next === undefined ? null : next;
-  }
-}
+import { ListNode, listFromArray } from '../lib.js';
 
 /**
  * @param {ListNode | null} listNode1
@@ -57,11 +40,11 @@ function addTwoNumbers(listNode1, listNode2) {
 
   while (listNode1 || listNode2) {
     if (listNode1) {
-      value1 = listNode1.value;
+      value1 = listNode1.val;
       listNode1 = listNode1.next;
     }
     if (listNode2) {
-      value2 = listNode2.value;
+      value2 = listNode2.val;
       listNode2 = listNode2.next;
     }
     sum = value1 + value2 + carry;
