@@ -24,18 +24,30 @@
 import { describe, test } from 'node:test';
 import { deepStrictEqual } from 'node:assert';
 
-/** @param {ListNode} head */
-function toArray(head) {
+/** @param {ListNode | null} head */
+function listToArray(head) {
   let curr = head;
   const result = [];
 
-  while (curr.next) {
+  while (curr) {
     result.push(curr.value);
     curr = curr.next;
   }
-  result.push(curr.value);
 
   return result;
+}
+
+/** @param {Array<number>} array */
+function listFromArray(array) {
+  const head = new ListNode(0, null);
+  let curr = head;
+
+  for (const num of array) {
+    curr.next = new ListNode(num, null);
+    curr = curr.next;
+  }
+
+  return head.next;
 }
 
 class ListNode {
@@ -61,7 +73,7 @@ class ListNode {
  * @return {ListNode | null}
  */
 function addTwoNumbers(listNode1, listNode2) {
-  let head = new ListNode(0, undefined);
+  const head = new ListNode(0, undefined);
   let curr = head;
   let carry = 0;
   let sum = 0;
