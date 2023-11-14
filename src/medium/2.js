@@ -24,32 +24,6 @@
 import { describe, test } from 'node:test';
 import { deepStrictEqual } from 'node:assert';
 
-/** @param {ListNode | null} head */
-function listToArray(head) {
-  let curr = head;
-  const result = [];
-
-  while (curr) {
-    result.push(curr.value);
-    curr = curr.next;
-  }
-
-  return result;
-}
-
-/** @param {Array<number>} array */
-function listFromArray(array) {
-  const head = new ListNode(0, null);
-  let curr = head;
-
-  for (const num of array) {
-    curr.next = new ListNode(num, null);
-    curr = curr.next;
-  }
-
-  return head.next;
-}
-
 class ListNode {
   /** @type {number} */
   value = 0

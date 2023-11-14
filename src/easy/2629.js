@@ -1,6 +1,6 @@
 
 //
-// LeetCode 2629 - Yet unsolved
+// LeetCode 2629 - Solved
 //
 
 // Given an array of functions[f1, f2, f3, ..., fn], return a new function fn that is the function composition of the array of functions.
@@ -54,6 +54,7 @@ import { strictEqual } from 'node:assert';
  */
 function compose(functions) {
   return function (x) {
+    for (const func of functions.reverse()) x = func(x);
     return x;
   };
 };
