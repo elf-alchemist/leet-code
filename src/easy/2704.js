@@ -55,7 +55,7 @@ function expect(val) {
 }
 
 
-describe('LeetCode - 2667', () => {
+describe('LeetCode - 2704', () => {
   test('Case 1', () => {
 
     try {
