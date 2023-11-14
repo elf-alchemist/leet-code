@@ -1,4 +1,4 @@
-class ListNode {
+export class ListNode {
   /** @type {number} */ value = 0;
   /** @type {ListNode | null} */ next = null;
 
@@ -13,7 +13,7 @@ class ListNode {
 }
 
 /** @param {ListNode | null} head */
-function listToArray(head) {
+export function listToArray(head) {
   let curr = head;
   const result = [];
 
@@ -26,7 +26,7 @@ function listToArray(head) {
 }
 
 /** @param {Array<number>} array */
-function listFromArray(array) {
+export function listFromArray(array) {
   const head = new ListNode(0, null);
   let curr = head;
 
@@ -35,5 +35,5 @@ function listFromArray(array) {
     curr = curr.next;
   }
 
-  return head.next;
+  return head.next ?? head;
 }

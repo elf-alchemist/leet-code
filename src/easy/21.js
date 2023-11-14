@@ -27,6 +27,7 @@
 
 import { describe, test } from 'node:test';
 import { deepStrictEqual } from 'node:assert';
+import { listFromArray } from '../lib.js';
 
 class ListNode {
   /**
@@ -68,12 +69,12 @@ function mergeTwoLists(listNode1, listNode2) {
 describe('LeetCode - 21', () => {
   test('Case 1', () => {
 
-    const firstInput = new ListNode(1, new ListNode(2, new ListNode(4, undefined)));
-    const secondInput = new ListNode(1, new ListNode(3, new ListNode(4, undefined)));
+    const firstInput = listFromArray([1, 2, 4]);
+    const secondInput = listFromArray([1, 3, 4]);
 
     const result = mergeTwoLists(firstInput, secondInput);
 
-    deepStrictEqual(result, new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(4, undefined)))))));
+    deepStrictEqual(result, listFromArray([1, 1, 2, 3, 4, 4]));
   });
   test('Case 2', () => {
 

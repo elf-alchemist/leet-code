@@ -5,11 +5,6 @@
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "esModuleInterop": false,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"],
-      "$/*": ["./test/*"],
-    },
 
     "allowJs": true,
     "checkJs": true,
@@ -19,6 +14,6 @@
     "strictNullChecks": true,
     "noUncheckedIndexedAccess": true
   },
-  "include": ["./src/**/*.js", "./test/**/*.js"],
-  "exclude": ["node_modules", "**/node_modules/*", "dist", "**/dist/*"]
+  "include": ["src/"],
+  "exclude": ["**/node_modules/**","**/dist/**"]
 }

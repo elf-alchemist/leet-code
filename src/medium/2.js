@@ -23,6 +23,7 @@
 
 import { describe, test } from 'node:test';
 import { deepStrictEqual } from 'node:assert';
+import { listFromArray } from '../lib.js';
 
 class ListNode {
   /** @type {number} */
@@ -74,12 +75,12 @@ function addTwoNumbers(listNode1, listNode2) {
 describe('LeetCode - 2', () => {
   test('Case 1', () => {
 
-    const firstInput = new ListNode(2, new ListNode(4, new ListNode(3, null)));
-    const secondInput = new ListNode(5, new ListNode(6, new ListNode(4, null)));
+    const firstInput = listFromArray([2, 4, 3]);
+    const secondInput = listFromArray([5, 6, 4]);
 
     const result = addTwoNumbers(firstInput, secondInput);
 
-    deepStrictEqual(result, new ListNode(7, new ListNode(0, new ListNode(8, null))));
+    deepStrictEqual(result, listFromArray([7, 0, 8]));
   });
   test('Case 2', () => {
 
@@ -92,20 +93,11 @@ describe('LeetCode - 2', () => {
   });
   test('Case 3', () => {
 
-    const firstInput = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, null)))))));
-    const secondInput = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, null))));
+    const firstInput = listFromArray([9, 9, 9, 9, 9, 9, 9]);
+    const secondInput = listFromArray([9, 9, 9, 9]);
 
     const result = addTwoNumbers(firstInput, secondInput);
 
-    let node = new ListNode(1, null);
-    node = new ListNode(0, node);
-    node = new ListNode(0, node);
-    node = new ListNode(0, node);
-    node = new ListNode(9, node);
-    node = new ListNode(9, node);
-    node = new ListNode(9, node);
-    node = new ListNode(8, node);
-
-    deepStrictEqual(result, node);
+    deepStrictEqual(result, listFromArray([8, 9, 9, 9, 0, 0, 0, 1]));
   });
 });
