@@ -15,6 +15,7 @@
     "all": "node --test src/**/**.js"
   },
   "devDependencies": {
+    "@total-typescript/ts-reset": "^0.5.1",
     "@types/node": "^20.9.0"
   }
 }
