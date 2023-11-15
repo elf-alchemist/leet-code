@@ -35,11 +35,14 @@ import { describe, test } from 'node:test';
 import { deepStrictEqual } from 'node:assert';
 
 /**
- * @param {Function} fn
- * @return {Function}
+ * @param {(...args: Array<any>) => any} fn
+ * @return {(...args: Array<any>) => any}
  */
 function once(fn) {
+  let called = false;
   return function (...args) {
+    if (called) return undefined;
+    called = !called;
     return fn(...args);
   };
 };
