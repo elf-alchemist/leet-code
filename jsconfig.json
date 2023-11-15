@@ -2,17 +2,27 @@
   "compilerOptions": {
     "target": "ESNext",
     "lib": ["ESNext"],
+
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
+    "allowSyntheticDefaultImports": false,
     "esModuleInterop": false,
+    "resolveJsonModule": true,
 
     "allowJs": true,
     "checkJs": true,
-    "alwaysStrict": true,
 
     "strict": true,
-    "strictNullChecks": true,
-    "noUncheckedIndexedAccess": true
+    "allowUnusedLabels": false,
+    "allowUnreachableCode": false,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
   },
   "include": ["src/"],
   "exclude": ["**/node_modules/**","**/dist/**"]

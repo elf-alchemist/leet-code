@@ -8,7 +8,7 @@
     "node": ">=20.0.0"
   },
   "scripts": {
-    "only": "_f() { node --test src/**/$1.js; echo '\n'; }; _f",
+    "only": "_f() { node --test src/**/$1.js; }; _f",
     "easy": "node --test src/easy/**.js",
     "medium": "node --test src/medium/**.js",
     "hard": "node --test src/hard/**.js",

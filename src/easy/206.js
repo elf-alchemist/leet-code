@@ -1,6 +1,6 @@
 
 //
-// LeetCode 206 - Yet unsolved
+// LeetCode 206 - Solved
 //
 
 // Given the head of a singly linked list, reverse the list, and return the reversed list.
@@ -31,15 +31,15 @@ import { ListNode, listFromArray } from '../lib.js';
  */
 function reverseList(head) {
   /** @type {ListNode | null} */
-  let prev = null;
+  let result = null;
   let curr = head;
 
-  while (curr !== null) {
-    prev = new ListNode(curr.val, prev);
+  while (curr) {
+    result = new ListNode(curr.val, result);
     curr = curr.next;
   }
 
-  return prev;
+  return result;
 };
 
 describe('LeetCode - 206', () => {
