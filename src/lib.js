@@ -13,8 +13,8 @@ export class ListNode {
 
 /** @param {ListNode | null} head */
 export function listToArray(head) {
-  let curr = head;
   const result = [];
+  let curr = head;
 
   while (curr) {
     result.push(curr.val);

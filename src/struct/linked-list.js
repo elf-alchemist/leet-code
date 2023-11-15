@@ -3,26 +3,28 @@ import { deepStrictEqual, strictEqual } from 'node:assert';
 
 class LinkedListNode {
   /**
-   * @param {number | undefined} val
-   * @param {LinkedListNode | undefined} next
+   * @param {number} val - Actual value of the node, defaults to 0.
+   * @param {LinkedListNode | null} next - Reference to next node, defaults to null.
    */
-  constructor(val, next) {
+  constructor(val = 0, next = null) {
 
     /** @type {number} */
-    this.val = val ?? 0;
+    this.val = val;
 
     /** @type {LinkedListNode | null} */
-    this.next = next ?? null;
+    this.next = next;
 
   }
 }
 
 class LinkedList {
-  /** @param {LinkedListNode | undefined} init */
-  constructor(init) {
+  /**
+   * @param {LinkedListNode} init - Inital head node of the list, defaults to `LinkedListNode(0, null)`
+   */
+  constructor(init = new LinkedListNode(0, null)) {
 
     /** @type {LinkedListNode} */
-    this.head = init ?? new LinkedListNode(0, undefined);
+    this.head = init;
 
     /** @type {number} */
     this.size = 1;
@@ -173,7 +175,7 @@ class LinkedList {
   }
 
   clear() {
-    this.head = new LinkedListNode(undefined, undefined);
+    this.head = new LinkedListNode();
     this.size = 1;
   }
 }
@@ -181,7 +183,7 @@ class LinkedList {
 describe('Linked List', () => {
   test('Counting size correctly', () => {
 
-    const list = new LinkedList(undefined);
+    const list = new LinkedList();
     list.insertTail(1);
     list.insertTail(2);
     list.insertTail(3);
@@ -195,7 +197,7 @@ describe('Linked List', () => {
   });
   test('Return head correctly', () => {
 
-    const list = new LinkedList(undefined);
+    const list = new LinkedList();
     list.insertTail(1);
     list.insertTail(2);
     list.insertTail(3);
@@ -208,7 +210,7 @@ describe('Linked List', () => {
 
   test('Return tail correctly', () => {
 
-    const list = new LinkedList(undefined);
+    const list = new LinkedList();
     list.insertTail(1);
     list.insertTail(2);
     list.insertTail(3);
@@ -221,7 +223,7 @@ describe('Linked List', () => {
 
   test('Return at index correctly', () => {
 
-    const list = new LinkedList(undefined);
+    const list = new LinkedList();
     list.insertTail(1);
     list.insertTail(2);
     list.insertTail(3);
@@ -233,7 +235,7 @@ describe('Linked List', () => {
   });
   test('Insert at head correctly', () => {
 
-    const list = new LinkedList(undefined);
+    const list = new LinkedList();
     list.insertHead(1);
     list.insertHead(2);
     list.insertHead(3);
@@ -245,7 +247,7 @@ describe('Linked List', () => {
   });
   test('Insert at tail correctly', () => {
 
-    const list = new LinkedList(undefined);
+    const list = new LinkedList();
     list.insertTail(1);
     list.insertTail(2);
     list.insertTail(3);
@@ -257,7 +259,7 @@ describe('Linked List', () => {
   });
   test('Insert at index correctly', () => {
 
-    const list = new LinkedList(undefined);
+    const list = new LinkedList();
     list.insertTail(1);
     list.insertTail(3);
     list.insertIndex(2, 2);
