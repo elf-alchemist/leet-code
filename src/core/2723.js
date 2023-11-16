@@ -39,8 +39,7 @@ import { strictEqual } from 'node:assert';
  * @return {Promise<number>}
  */
 async function addTwoPromises(promise1, promise2) {
-  const value1 = await promise1;
-  const value2 = await promise2;
+  const [value1, value2] = await Promise.all([promise1, promise2])
   return Promise.resolve(value1 + value2);
 }
 
