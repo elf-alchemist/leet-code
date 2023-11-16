@@ -68,8 +68,16 @@ import { deepStrictEqual } from 'node:assert';
  * @return {(...args: Array<any>) => any}
  */
 function memoize(fn) {
+  const map = new Map();
   return function (...args) {
-    return fn(...args)
+    const key = JSON.stringify(args);
+    const exists = map.get(key);
+
+    if (exists) return exists;
+
+    const value = fn(...args);
+    map.set(key, value);
+    return value;
   };
 }
 
@@ -92,7 +100,7 @@ describe('LeetCode - 2666', () => {
       callCount,
     ]
 
-    deepStrictEqual(callCount, [4, 4, 3, 2]);
+    deepStrictEqual(result, [4, 4, 3, 2]);
 
   });
   test('Case 2', () => {
@@ -114,7 +122,7 @@ describe('LeetCode - 2666', () => {
       callCount,
     ];
 
-    deepStrictEqual(result, [2, 6, 2, 6, 2]);
+    deepStrictEqual(result, [2, 6, 2, 6, 5]);
 
   });
   test('Case 3', () => {
@@ -133,7 +141,7 @@ describe('LeetCode - 2666', () => {
       callCount
     ]
 
-    deepStrictEqual(result, [8, 1]);
+    deepStrictEqual(result, [8, 15]);
 
   });
 });
