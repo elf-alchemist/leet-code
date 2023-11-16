@@ -1,3 +1,8 @@
+
+//
+// LeetCode 2623 - Solved
+//
+
 // Given a function fn, return a memoized version of that function.
 // A memoized function is a function that will never be called twice
 // with the same inputs.Instead it will return a cached value.
@@ -71,13 +76,13 @@ function memoize(fn) {
   const map = new Map();
   return function (...args) {
     const key = JSON.stringify(args);
-    const exists = map.get(key);
 
-    if (exists) return exists;
+    const existingValue = map.get(key);
+    if (existingValue !== undefined) return existingValue;
 
-    const value = fn(...args);
-    map.set(key, value);
-    return value;
+    const newValue = fn(...args);
+    map.set(key, newValue);
+    return newValue;
   };
 }
 
