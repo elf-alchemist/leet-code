@@ -1,6 +1,6 @@
 
 //
-// LeetCode 169 - Yet unsolved
+// LeetCode 169 - Solved
 //
 
 // Given an array nums of size n, return the majority element.
@@ -28,8 +28,20 @@ import { deepStrictEqual } from 'node:assert';
  * @return {number}
  */
 function majorityElement(nums) {
-  return Number(nums.some((num) => num))
-};
+  /** @type {Map<number, number>} */
+  const map = new Map();
+  const quan = Math.floor(nums.length / 2);
+
+  let acc;
+
+  for(const num of nums) {
+    acc = map.get(num) ?? 0;
+    if (acc === quan) return num;
+    map.set(num, acc + 1);
+  }
+
+  return 0;
+}
 
 describe('LeetCode - 169', () => {
   test('Case 1', () => {
