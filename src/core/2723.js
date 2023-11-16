@@ -39,33 +39,33 @@ import { strictEqual } from 'node:assert';
  * @return {Promise<number>}
  */
 async function addTwoPromises(promise1, promise2) {
-  return new Promise((resolve) => resolve(0))
+  const value1 = await promise1;
+  const value2 = await promise2;
+  return Promise.resolve(value1 + value2);
 }
 
-/**
- * addTwoPromises(Promise.resolve(2), Promise.resolve(2))
- *   .then(console.log); // 4
- */
-
-describe('LeetCode - 2703', () => {
+describe('LeetCode - 2723', () => {
   test('Case 1', async () => {
     const result = await addTwoPromises(
-      new Promise(resolve => setTimeout(() => resolve(2), 20)),
-      new Promise(resolve => setTimeout(() => resolve(5), 60)),
+      Promise.resolve(2),
+      Promise.resolve(5),
     );
 
     strictEqual(result, 7);
   });
   test('Case 2', async () => {
     const result = await addTwoPromises(
-      new Promise(resolve => setTimeout(() => resolve(10), 50)),
-      new Promise(resolve => setTimeout(() => resolve(-12), 30)),
+      Promise.resolve(10),
+      Promise.resolve(-12),
     );
 
     strictEqual(result, -2);
   });
   test('Case 3', async () => {
-    const result = await addTwoPromises(Promise.resolve(2), Promise.resolve(2));
+    const result = await addTwoPromises(
+      Promise.resolve(2),
+      Promise.resolve(2),
+    );
 
     strictEqual(result, 4);
   });
