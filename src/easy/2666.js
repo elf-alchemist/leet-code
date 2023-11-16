@@ -1,6 +1,6 @@
 
 //
-// LeetCode 2666 - Yet unsolved
+// LeetCode 2666 - Solved
 //
 
 // Given a function `fn`, return a new function that is identical
