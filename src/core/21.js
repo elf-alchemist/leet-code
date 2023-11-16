@@ -27,7 +27,7 @@
 
 import { describe, test } from 'node:test';
 import { deepStrictEqual } from 'node:assert';
-import { ListNode, listFromArray } from '../lib.js';
+import { ListNode, listFromArray } from '../lib/util.js';
 
 /**
  * @param {ListNode | null} listNode1
