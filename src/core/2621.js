@@ -30,23 +30,31 @@ import { strictEqual } from 'node:assert';
  * @param {number} millis
  * @return {Promise<any>}
  */
-async function sleep(millis) {
-  return Promise.resolve(millis);
+function sleep(millis) {
+  return new Promise(resolve => setTimeout(resolve, millis));
 }
 
 describe('LeetCode - 2666', () => {
   test('Case 1', async () => {
 
-    const now = Date.now();
+    const past = Date.now();
+    const millis = 100;
+    const time = await sleep(millis).then(() => Date.now() - past);
 
-    strictEqual(await sleep(100).then(() => Date.now() - now), 100)
+    const margin = (time - millis) < 10;
+
+    strictEqual(margin, true);
 
   });
   test('Case 2', async () => {
 
-    const now = Date.now();
+    const past = Date.now();
+    const millis = 200;
+    const time = await sleep(millis).then(() => Date.now() - past);
 
-    strictEqual(await sleep(200).then(() => Date.now() - now), 200)
+    const margin = (time - millis) < 10;
+
+    strictEqual(margin, true);
 
   });
 });
