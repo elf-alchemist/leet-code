@@ -1,6 +1,6 @@
 
 //
-// LeetCode 2623 - Solved
+// LeetCode 2623 - JavaScript - Memoize
 //
 
 // Given a function fn, return a memoized version of that function.
@@ -63,7 +63,6 @@
 //   `actions.length === values.length`
 //   `actions[i]` is one of "call" and "getCallCount"
 //   `fnName` is one of "sum", "factorial" and "fib"
-
 
 import { describe, test } from 'node:test';
 import { deepStrictEqual } from 'node:assert';

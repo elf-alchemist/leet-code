@@ -1,6 +1,6 @@
 
 //
-// LeetCode 2620 - Solved
+// LeetCode 2620 - JavaScript - Counter
 //
 
 // Given an integer n, return a counter function.

@@ -1,6 +1,6 @@
 
 //
-// LeetCode 2667 - Solved
+// LeetCode 2667 - JavaScript - Create Hello World Function
 //
 
 // Write a function createHelloWorld. It should return a new function that always returns "Hello World".

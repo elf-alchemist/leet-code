@@ -1,6 +1,6 @@
 
 //
-// LeetCode 2626 - Solved
+// LeetCode 2626 - JavaScript - Array Reduce Transformation
 //
 
 // Given an integer array `nums`, a reducer function `fn`,

@@ -1,6 +1,6 @@
 
 //
-// LeetCode 169 - Solved
+// LeetCode 169 - Majority Element
 //
 
 // Given an array nums of size n, return the majority element.

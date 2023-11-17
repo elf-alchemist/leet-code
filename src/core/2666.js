@@ -1,6 +1,6 @@
 
 //
-// LeetCode 2666 - Solved
+// LeetCode 2666 - JavaScript - Allow One Function Call
 //
 
 // Given a function `fn`, return a new function that is identical

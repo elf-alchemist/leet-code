@@ -1,6 +1,6 @@
 
 //
-// LeetCode 9 - Solved
+// LeetCode 9 - Palidrome Number
 //
 
 // Given an integer `x`, return true if `x` is a palindrome, and false otherwise.

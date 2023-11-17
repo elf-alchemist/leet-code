@@ -1,6 +1,6 @@
 
 //
-// LeetCode 2704 - Solved
+// LeetCode 2704 - JavaScript - To Be Or Not To Be
 //
 
 // Write a function expect that helps developers test their code.

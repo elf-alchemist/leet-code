@@ -1,6 +1,6 @@
 
 //
-// LeetCode 2665 - Solved
+// LeetCode 2665 - JavaScript - Counter II
 //
 
 // Write a function createCounter.

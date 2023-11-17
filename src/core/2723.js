@@ -1,6 +1,6 @@
 
 //
-// LeetCode 2723 - Yet unsolved
+// LeetCode 2723 - JavaScript - Add Two Promises
 //
 
 // Given two promises promise1 and promise2, return a new promise.
