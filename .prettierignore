@@ -1,5 +1,0 @@
-build
-dist
-public
-.husky
-node_modules
