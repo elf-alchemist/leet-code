@@ -1,4 +1,3 @@
-
 //
 // LeetCode 9 - Palidrome Number
 //
@@ -33,11 +32,11 @@ import { strictEqual } from 'node:assert';
  * @return {boolean}
  */
 function isPalindrome(num) {
-  if ( num < 0 ) return false;
+  if (num < 0) return false;
   const str = String(num);
 
   for (let index = 0; index < str.length; index++) {
-    if ( str.at(index) !== str.at(-(index + 1)) ) return false;
+    if (str.at(index) !== str.at(-(index + 1))) return false;
   }
 
   return true;
@@ -45,18 +44,12 @@ function isPalindrome(num) {
 
 describe('LeetCode - 9', () => {
   test('Case 1', () => {
-
     strictEqual(isPalindrome(121), true);
-
   });
   test('Case 2', () => {
-
     strictEqual(isPalindrome(-121), false);
-
   });
   test('Case 3', () => {
-
     strictEqual(isPalindrome(10), false);
-
   });
 });

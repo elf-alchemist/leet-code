@@ -1,4 +1,3 @@
-
 //
 // LeetCode 2 - Add Two Numbers
 //
@@ -49,15 +48,14 @@ function addTwoNumbers(listNode1, listNode2) {
     }
     sum = value1 + value2 + carry;
     carry = Math.floor(sum / 10);
-    sum = sum % 10
+    sum = sum % 10;
   }
 
   return head.next;
-};
+}
 
 describe('LeetCode - 2', () => {
   test('Case 1', () => {
-
     const firstInput = listFromArray([2, 4, 3]);
     const secondInput = listFromArray([5, 6, 4]);
 
@@ -66,7 +64,6 @@ describe('LeetCode - 2', () => {
     deepStrictEqual(result, listFromArray([7, 0, 8]));
   });
   test('Case 2', () => {
-
     const firstInput = new ListNode(0, null);
     const secondInput = new ListNode(0, null);
 
@@ -75,7 +72,6 @@ describe('LeetCode - 2', () => {
     deepStrictEqual(result, new ListNode(0, null));
   });
   test('Case 3', () => {
-
     const firstInput = listFromArray([9, 9, 9, 9, 9, 9, 9]);
     const secondInput = listFromArray([9, 9, 9, 9]);
 

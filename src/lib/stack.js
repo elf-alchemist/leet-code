@@ -3,7 +3,6 @@ import { strictEqual } from 'node:assert';
 
 class Stack {
   constructor() {
-
     /** @type {Array<number>} */
     this.list = [];
 
@@ -30,7 +29,7 @@ class Stack {
 
   clear() {
     this.list = [];
-    this.size = 0
+    this.size = 0;
   }
 
   length() {
@@ -53,7 +52,7 @@ describe('Stack', () => {
   test('Peek empty head correctly', () => {
     const stack = new Stack();
 
-    const value = stack.peek()
+    const value = stack.peek();
 
     strictEqual(value, undefined);
   });

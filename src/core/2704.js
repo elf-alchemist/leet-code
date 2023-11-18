@@ -1,4 +1,3 @@
-
 //
 // LeetCode 2704 - JavaScript - To Be Or Not To Be
 //
@@ -43,59 +42,40 @@ import { deepStrictEqual } from 'node:assert';
  */
 function expect(val) {
   return {
-    toBe: function(expected) {
+    toBe: function (expected) {
       if (val === expected) return true;
       else throw new Error('Not Equal');
     },
-    notToBe: function(expected) {
+    notToBe: function (expected) {
       if (val !== expected) return true;
       else throw new Error('Equal');
-    }
+    },
   };
 }
 
-
 describe('LeetCode - 2704', () => {
   test('Case 1', () => {
-
     try {
-
       const result = expect(5).toBe(5);
       deepStrictEqual(result, true);
-
     } catch (error) {
-
       deepStrictEqual(error, new Error('Equal'));
-
     }
-
   });
   test('Case 2', () => {
-
     try {
-
       const result = expect(5).toBe(null);
       deepStrictEqual(result, true);
-
     } catch (error) {
-
       deepStrictEqual(error, new Error('Not Equal'));
-
     }
-
   });
   test('Case 3', () => {
-
     try {
-
       const result = expect(5).notToBe(null);
       deepStrictEqual(result, true);
-
     } catch (error) {
-
       deepStrictEqual(error, new Error('Equal'));
-
     }
-
   });
 });

@@ -1,4 +1,3 @@
-
 //
 // LeetCode 2620 - JavaScript - Counter
 //
@@ -25,7 +24,7 @@
 //   `calls[i] === "call"`
 
 import { describe, test } from 'node:test';
-import { strictEqual } from 'node:assert'
+import { strictEqual } from 'node:assert';
 
 /**
  * @param {number} n
@@ -36,11 +35,11 @@ function createCounter(n) {
     const x = n++;
     return x;
   };
-};
+}
 
 describe('LeetCode - 2620', () => {
   test('Case 1', () => {
-    const func = createCounter(10)
+    const func = createCounter(10);
 
     strictEqual(func(), 10);
     strictEqual(func(), 11);
@@ -51,8 +50,8 @@ describe('LeetCode - 2620', () => {
 
     strictEqual(func(), -2);
     strictEqual(func(), -1);
-    strictEqual(func(),  0);
-    strictEqual(func(),  1);
-    strictEqual(func(),  2);
+    strictEqual(func(), 0);
+    strictEqual(func(), 1);
+    strictEqual(func(), 2);
   });
 });

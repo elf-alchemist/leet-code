@@ -1,4 +1,3 @@
-
 //
 // LeetCode 2629 - JavaScript - Function Composition
 //
@@ -57,7 +56,7 @@ function compose(functions) {
     for (const func of functions.reverse()) x = func(x);
     return x;
   };
-};
+}
 
 describe('LeetCode - 2629', () => {
   test('Case 1', () => {

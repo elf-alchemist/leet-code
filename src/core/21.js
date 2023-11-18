@@ -1,4 +1,3 @@
-
 //
 // LeetCode 21 - Merge Two Sorted Lists
 //
@@ -51,11 +50,10 @@ function mergeTwoLists(listNode1, listNode2) {
 
   curr.next = listNode1 || listNode2;
   return dummy.next;
-};
+}
 
 describe('LeetCode - 21', () => {
   test('Case 1', () => {
-
     const firstInput = listFromArray([1, 2, 4]);
     const secondInput = listFromArray([1, 3, 4]);
 
@@ -64,12 +62,11 @@ describe('LeetCode - 21', () => {
     deepStrictEqual(result, listFromArray([1, 1, 2, 3, 4, 4]));
   });
   test('Case 2', () => {
-
     const secondInput = new ListNode(0, undefined);
 
     const result = mergeTwoLists(null, secondInput);
 
-    deepStrictEqual(result, new ListNode(0,  undefined));
+    deepStrictEqual(result, new ListNode(0, undefined));
   });
   test('Case 3', () => {
     const result = mergeTwoLists(null, null);

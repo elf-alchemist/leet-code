@@ -1,4 +1,3 @@
-
 //
 // LeetCode 217 - Contains Duplicate
 //
@@ -42,24 +41,18 @@ function containsDuplicate(nums) {
 
 describe('LeetCode - 217', () => {
   test('Case 1', () => {
-
     const firstInput = [1, 2, 3, 1];
 
     strictEqual(containsDuplicate(firstInput), true);
-
   });
   test('Case 2', () => {
-
     const secondInput = [1, 2, 3, 4];
 
     strictEqual(containsDuplicate(secondInput), false);
-
   });
   test('Case 3', () => {
-
     const thirdInput = [1, 1, 1, 3, 3, 4, 3, 2, 4, 2];
 
     strictEqual(containsDuplicate(thirdInput), true);
-
   });
 });

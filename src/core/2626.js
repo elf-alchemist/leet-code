@@ -1,4 +1,3 @@
-
 //
 // LeetCode 2626 - JavaScript - Array Reduce Transformation
 //
@@ -70,7 +69,7 @@ function reduce(arr, fn, init) {
   }
 
   return result;
-};
+}
 
 /**
  * @param {number} acc

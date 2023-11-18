@@ -1,4 +1,3 @@
-
 //
 // LeetCode 2623 - JavaScript - Memoize
 //
@@ -97,15 +96,9 @@ describe('LeetCode - 2666', () => {
 
     const memoSum = memoize(sum);
 
-    const result = [
-      memoSum(2, 2),
-      memoSum(2, 2),
-      memoSum(1, 2),
-      callCount,
-    ]
+    const result = [memoSum(2, 2), memoSum(2, 2), memoSum(1, 2), callCount];
 
     deepStrictEqual(result, [4, 4, 3, 2]);
-
   });
   test('Case 2', () => {
     let callCount = 0;
@@ -113,21 +106,14 @@ describe('LeetCode - 2666', () => {
     /** @type {(n: number) => number} */
     function factorial(n) {
       callCount++;
-      return (n <= 1) ? 1 : (n * factorial(n - 1));
+      return n <= 1 ? 1 : n * factorial(n - 1);
     }
 
     const memoFactorial = memoize(factorial);
 
-    const result = [
-      memoFactorial(2),
-      memoFactorial(3),
-      memoFactorial(2),
-      memoFactorial(3),
-      callCount,
-    ];
+    const result = [memoFactorial(2), memoFactorial(3), memoFactorial(2), memoFactorial(3), callCount];
 
     deepStrictEqual(result, [2, 6, 2, 6, 5]);
-
   });
   test('Case 3', () => {
     let callCount = 0;
@@ -135,17 +121,13 @@ describe('LeetCode - 2666', () => {
     /** @type {(n: number) => number} */
     function fib(n) {
       callCount++;
-      return (n <= 1) ? 1 : (fib(n - 1) + fib(n - 2));
+      return n <= 1 ? 1 : fib(n - 1) + fib(n - 2);
     }
 
     const memoFib = memoize(fib);
 
-    const result = [
-      memoFib(5),
-      callCount
-    ]
+    const result = [memoFib(5), callCount];
 
     deepStrictEqual(result, [8, 15]);
-
   });
 });

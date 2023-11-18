@@ -1,4 +1,3 @@
-
 //
 // LeetCode 2667 - JavaScript - Create Hello World Function
 //
@@ -30,18 +29,15 @@ import { strictEqual } from 'node:assert';
  */
 function createHelloWorld() {
   /** @param {Array<unknown>} args */
-  return function(...args) {
+  return function (...args) {
     return 'Hello World';
   };
 }
 
 const func = createHelloWorld();
 
-
 describe('LeetCode - 2667', () => {
   test('Case 1', () => {
-
     strictEqual(func(), 'Hello World');
-
   });
 });

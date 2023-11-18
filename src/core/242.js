@@ -1,4 +1,3 @@
-
 //
 // LeetCode 242 - Valid Anagram
 //
@@ -52,27 +51,21 @@ function isAnagram(s, t) {
 
 describe('LeetCode - 242', () => {
   test('Case 1', () => {
-
     const firstS = 'anagram';
     const firstT = 'nagaram';
 
     strictEqual(isAnagram(firstS, firstT), true);
-
   });
   test('Case 2', () => {
-
     const secondS = 'rat';
     const secondT = 'car';
 
     strictEqual(isAnagram(secondS, secondT), false);
-
   });
   test('Case 3', () => {
-
     const thirdS = '';
     const thirdT = '';
 
     strictEqual(isAnagram(thirdS, thirdT), true);
-
   });
 });

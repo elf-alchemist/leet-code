@@ -1,4 +1,3 @@
-
 //
 // LeetCode 2665 - JavaScript - Counter II
 //
@@ -42,22 +41,20 @@ import { deepStrictEqual } from 'node:assert';
 function createCounter(init) {
   let value = init;
   return {
-    increment: function() {
+    increment: function () {
       return ++value;
     },
-    decrement: function() {
+    decrement: function () {
       return --value;
     },
-    reset: function() {
-      return value = init;
+    reset: function () {
+      return (value = init);
     },
-  }
-};
-
+  };
+}
 
 describe('LeetCode - 2667', () => {
   test('Case 1', () => {
-
     const counter = createCounter(5);
     const result = [];
 
@@ -66,10 +63,8 @@ describe('LeetCode - 2667', () => {
     result.push(counter.decrement());
 
     deepStrictEqual(result, [6, 5, 4]);
-
   });
   test('Case 2', () => {
-
     const counter = createCounter(0);
     const result = [];
 
@@ -80,6 +75,5 @@ describe('LeetCode - 2667', () => {
     result.push(counter.reset());
 
     deepStrictEqual(result, [1, 2, 1, 0, 0]);
-
   });
 });

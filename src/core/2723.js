@@ -1,4 +1,3 @@
-
 //
 // LeetCode 2723 - JavaScript - Add Two Promises
 //
@@ -39,32 +38,23 @@ import { strictEqual } from 'node:assert';
  * @return {Promise<number>}
  */
 async function addTwoPromises(promise1, promise2) {
-  const [value1, value2] = await Promise.all([promise1, promise2])
+  const [value1, value2] = await Promise.all([promise1, promise2]);
   return Promise.resolve(value1 + value2);
 }
 
 describe('LeetCode - 2723', () => {
   test('Case 1', async () => {
-    const result = await addTwoPromises(
-      Promise.resolve(2),
-      Promise.resolve(5),
-    );
+    const result = await addTwoPromises(Promise.resolve(2), Promise.resolve(5));
 
     strictEqual(result, 7);
   });
   test('Case 2', async () => {
-    const result = await addTwoPromises(
-      Promise.resolve(10),
-      Promise.resolve(-12),
-    );
+    const result = await addTwoPromises(Promise.resolve(10), Promise.resolve(-12));
 
     strictEqual(result, -2);
   });
   test('Case 3', async () => {
-    const result = await addTwoPromises(
-      Promise.resolve(2),
-      Promise.resolve(2),
-    );
+    const result = await addTwoPromises(Promise.resolve(2), Promise.resolve(2));
 
     strictEqual(result, 4);
   });

@@ -7,13 +7,11 @@ class LinkedListNode {
    * @param {LinkedListNode | null} next - Reference to next node, defaults to null.
    */
   constructor(val = 0, next = null) {
-
     /** @type {number} */
     this.val = val;
 
     /** @type {LinkedListNode | null} */
     this.next = next;
-
   }
 }
 
@@ -22,13 +20,11 @@ class LinkedList {
    * @param {LinkedListNode} init - Inital head node of the list, defaults to `LinkedListNode(0, null)`
    */
   constructor(init = new LinkedListNode(0, null)) {
-
     /** @type {LinkedListNode} */
     this.head = init;
 
     /** @type {number} */
     this.size = 1;
-
   }
 
   findHead() {
@@ -105,13 +101,12 @@ class LinkedList {
   removeHead() {
     if (this.head.next) {
       this.head = this.head.next;
-      this.size--
+      this.size--;
     }
   }
 
   removeTail() {
     let curr = this.head;
-
 
     while (curr.next) {
       if (curr.next.next === null) {
@@ -182,7 +177,6 @@ class LinkedList {
 
 describe('Linked List', () => {
   test('Counting size correctly', () => {
-
     const list = new LinkedList();
     list.insertTail(1);
     list.insertTail(2);
@@ -193,10 +187,8 @@ describe('Linked List', () => {
     const value = list.countSize();
 
     strictEqual(value, 6);
-
   });
   test('Return head correctly', () => {
-
     const list = new LinkedList();
     list.insertTail(1);
     list.insertTail(2);
@@ -204,12 +196,10 @@ describe('Linked List', () => {
 
     const value = list.findHead();
 
-    strictEqual(value, 0)
-
+    strictEqual(value, 0);
   });
 
   test('Return tail correctly', () => {
-
     const list = new LinkedList();
     list.insertTail(1);
     list.insertTail(2);
@@ -217,12 +207,10 @@ describe('Linked List', () => {
 
     const value = list.findTail();
 
-    strictEqual(value, 3)
-
+    strictEqual(value, 3);
   });
 
   test('Return at index correctly', () => {
-
     const list = new LinkedList();
     list.insertTail(1);
     list.insertTail(2);
@@ -230,11 +218,9 @@ describe('Linked List', () => {
 
     const value = list.findIndex(2);
 
-    strictEqual(value, 2)
-
+    strictEqual(value, 2);
   });
   test('Insert at head correctly', () => {
-
     const list = new LinkedList();
     list.insertHead(1);
     list.insertHead(2);
@@ -243,10 +229,8 @@ describe('Linked List', () => {
     const value = list.toArray();
 
     deepStrictEqual(value, [3, 2, 1, 0]);
-
   });
   test('Insert at tail correctly', () => {
-
     const list = new LinkedList();
     list.insertTail(1);
     list.insertTail(2);
@@ -255,10 +239,8 @@ describe('Linked List', () => {
     const value = list.toArray();
 
     deepStrictEqual(value, [0, 1, 2, 3]);
-
   });
   test('Insert at index correctly', () => {
-
     const list = new LinkedList();
     list.insertTail(1);
     list.insertTail(3);
@@ -267,6 +249,5 @@ describe('Linked List', () => {
     const value = list.toArray();
 
     deepStrictEqual(value, [0, 1, 2, 3]);
-
   });
 });

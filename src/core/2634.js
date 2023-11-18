@@ -1,4 +1,3 @@
-
 //
 // LeetCode 2634 - JavaScript - Filter Elements from Array
 //
@@ -53,7 +52,7 @@ function filter(arr, fn) {
   }
 
   return result;
-};
+}
 
 /**
  * @param {number} n

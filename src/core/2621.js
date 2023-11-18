@@ -1,4 +1,3 @@
-
 //
 // LeetCode 2621 - JavaScript - Sleep
 //
@@ -36,25 +35,21 @@ function sleep(millis) {
 
 describe('LeetCode - 2666', () => {
   test('Case 1', async () => {
-
     const past = Date.now();
     const millis = 100;
     const time = await sleep(millis).then(() => Date.now() - past);
 
-    const margin = (time - millis) < 10;
+    const margin = time - millis < 10;
 
     strictEqual(margin, true);
-
   });
   test('Case 2', async () => {
-
     const past = Date.now();
     const millis = 200;
     const time = await sleep(millis).then(() => Date.now() - past);
 
-    const margin = (time - millis) < 10;
+    const margin = time - millis < 10;
 
     strictEqual(margin, true);
-
   });
 });

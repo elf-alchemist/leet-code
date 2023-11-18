@@ -1,4 +1,3 @@
-
 //
 // LeetCode 2666 - JavaScript - Allow One Function Call
 //
@@ -45,37 +44,25 @@ function once(fn) {
     called = !called;
     return fn(...args);
   };
-};
+}
 
 describe('LeetCode - 2666', () => {
   test('Case 1', () => {
-
     /** @type {(...args: Array<number>) => number} */
     const func = (a, b, c) => a + b + c;
     const onceFunc = once(func);
 
-    const result = [
-      onceFunc(1, 2, 3),
-      onceFunc(2, 3, 6),
-    ];
-
+    const result = [onceFunc(1, 2, 3), onceFunc(2, 3, 6)];
 
     deepStrictEqual(result, [6, undefined]);
-
   });
   test('Case 2', () => {
-
     /** @type {(...args: Array<number>) => number} */
     const func = (a, b, c) => a * b * c;
     const onceFunc = once(func);
 
-    const result = [
-      onceFunc(5, 7, 4),
-      onceFunc(2, 3, 6),
-      onceFunc(4, 6, 8),
-    ];
+    const result = [onceFunc(5, 7, 4), onceFunc(2, 3, 6), onceFunc(4, 6, 8)];
 
     deepStrictEqual(result, [140, undefined, undefined]);
-
   });
 });

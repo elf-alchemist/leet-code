@@ -1,4 +1,3 @@
-
 //
 // LeetCode 14 - Longest Common Prefix
 //
@@ -33,40 +32,32 @@ function longestCommonPrefix(strs) {
   // @ts-ignore
   for (let index = 0; index < strs[0].length; index++) {
     // @ts-ignore
-    if (strs.every((str) => str[index] === strs[0][index])) result += strs[0][index];
+    if (strs.every(str => str[index] === strs[0][index])) result += strs[0][index];
     else break;
   }
 
   return result;
-};
+}
 
 describe('LeetCode - 14', () => {
   test('Case 1', () => {
-
-    const firstInput = ['flower', 'flow', 'flight']
+    const firstInput = ['flower', 'flow', 'flight'];
 
     strictEqual(longestCommonPrefix(firstInput), 'fl');
-
   });
   test('Case 2', () => {
-
     const secondInput = ['dog', 'racecar', 'car'];
 
     strictEqual(longestCommonPrefix(secondInput), '');
-
   });
   test('Case 3', () => {
-
     const thirdInput = [''];
 
     strictEqual(longestCommonPrefix(thirdInput), '');
-
   });
   test('Case 4', () => {
-
     const fourthInput = ['a'];
 
     strictEqual(longestCommonPrefix(fourthInput), 'a');
-
   });
 });

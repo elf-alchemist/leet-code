@@ -1,4 +1,3 @@
-
 //
 // LeetCode 206 - Reverse Linked List
 //
@@ -40,7 +39,7 @@ function reverseList(head) {
   }
 
   return result;
-};
+}
 
 describe('LeetCode - 206', () => {
   test('Case 1', () => {

@@ -1,4 +1,3 @@
-
 //
 // LeetCode 2635 - JavaScript - Apply Transform Over Each Element in Array
 //

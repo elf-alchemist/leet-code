@@ -1,4 +1,3 @@
-
 //
 // LeetCode 169 - Majority Element
 //
@@ -34,7 +33,7 @@ function majorityElement(nums) {
 
   let acc;
 
-  for(const num of nums) {
+  for (const num of nums) {
     acc = map.get(num) ?? 0;
     if (acc === quan) return num;
     map.set(num, acc + 1);

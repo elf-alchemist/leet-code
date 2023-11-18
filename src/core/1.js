@@ -1,4 +1,3 @@
-
 //
 // LeetCode 1 - Two Sum
 //
@@ -41,38 +40,34 @@ function twoSum(nums, target) {
     const exists = numsMap.get(diff);
     if (exists !== undefined) result = [exists, index];
     // @ts-ignore
-    numsMap.set(nums[index], index)
+    numsMap.set(nums[index], index);
   }
 
   return result;
-};
-
+}
 
 describe('LeetCode - 1', () => {
   test('Case 1', () => {
-
     const firstNums = [2, 7, 11, 15];
     const firstTarget = 9;
-    const firstResult = twoSum(firstNums, firstTarget)
+    const firstResult = twoSum(firstNums, firstTarget);
 
     deepStrictEqual(firstResult, [0, 1]);
   });
 
   test('Case 2', () => {
-
     const secondNums = [3, 2, 4];
     const secondTarget = 6;
-    const secondResult = twoSum(secondNums, secondTarget)
+    const secondResult = twoSum(secondNums, secondTarget);
 
     deepStrictEqual(secondResult, [1, 2]);
   });
 
   test('Case 3', () => {
-
     const thirdNums = [3, 3];
     const thirdTarget = 6;
-    const thirdResult = twoSum(thirdNums, thirdTarget)
+    const thirdResult = twoSum(thirdNums, thirdTarget);
 
     deepStrictEqual(thirdResult, [0, 1]);
   });
-})
+});

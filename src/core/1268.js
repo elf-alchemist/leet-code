@@ -1,4 +1,3 @@
-
 //
 // LeetCode 1268 - Search Suggestions System
 //
@@ -45,45 +44,37 @@ function suggestedProducts(products, searchWord) {
 
   for (let index = 0; index < searchWord.length; index++) {
     prefix += searchWord[index];
-    const filteredInput = sortedInput.filter((word) => word.startsWith(prefix));
+    const filteredInput = sortedInput.filter(word => word.startsWith(prefix));
     result.push(filteredInput.slice(0, 3));
   }
 
   return result;
-};
+}
 
 describe('LeetCode - 1268', () => {
   test('Case 1', () => {
+    const firstInput = ['mobile', 'mouse', 'moneypot', 'monitor', 'mousepad'];
+    const firstSearch = 'mouse';
 
-    const firstInput = ["mobile", "mouse", "moneypot", "monitor", "mousepad"];
-    const firstSearch = "mouse";
-
-    deepStrictEqual(
-      suggestedProducts(firstInput, firstSearch),
-      [
-        ["mobile", "moneypot", "monitor"],
-        ["mobile", "moneypot", "monitor"],
-        ["mouse", "mousepad"],
-        ["mouse", "mousepad"],
-        ["mouse", "mousepad"],
-      ],
-    );
+    deepStrictEqual(suggestedProducts(firstInput, firstSearch), [
+      ['mobile', 'moneypot', 'monitor'],
+      ['mobile', 'moneypot', 'monitor'],
+      ['mouse', 'mousepad'],
+      ['mouse', 'mousepad'],
+      ['mouse', 'mousepad'],
+    ]);
   });
   test('Case 2', () => {
+    const secondInput = ['havana'];
+    const secondSearch = 'havana';
 
-    const secondInput = ["havana"];
-    const secondSearch = "havana";
-
-    deepStrictEqual(
-      suggestedProducts(secondInput, secondSearch),
-      [
-        ["havana"],
-        ["havana"],
-        ["havana"],
-        ["havana"],
-        ["havana"],
-        ["havana"],
-      ],
-    );
+    deepStrictEqual(suggestedProducts(secondInput, secondSearch), [
+      ['havana'],
+      ['havana'],
+      ['havana'],
+      ['havana'],
+      ['havana'],
+      ['havana'],
+    ]);
   });
 });
