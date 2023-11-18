@@ -88,10 +88,11 @@ function squareSum(acc, curr) {
 }
 
 /**
- * @param {number} acc
- * @param {number} curr
+ * @param {number} _acc
+ * @param {number} _curr
  */
-function constant(acc, curr) {
+// eslint-disable-next-line no-unused-vars
+function constant(_acc, _curr) {
   return 0;
 }
 

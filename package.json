@@ -8,17 +8,20 @@
     "node": ">=20.0.0"
   },
   "scripts": {
+    "format": "prettier --config prettier.config.js --cache --write src/",
+    "lint": "eslint --config eslint.config.js --cache --fix src/",
     "only": "_f() { node --test src/**/$1.js; }; _f",
     "all": "node --test src/**/**.js"
   },
   "devDependencies": {
+    "@eslint/js": "^8.54.0",
     "@total-typescript/ts-reset": "^0.5.1",
     "@types/eslint": "^8.44.7",
+    "@types/eslint-config-prettier": "^6.11.3",
     "@types/eslint__js": "^8.42.3",
     "@types/node": "^20.9.1",
     "eslint": "^8.54.0",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.1",
     "globals": "^13.23.0",
     "prettier": "^3.1.0"
   }

@@ -51,9 +51,10 @@ function map(arr, fn) {
 
 /**
  * @param {number} n
- * @param {number} i
+ * @param {number} _i
  */
-function plusOne(n, i) {
+// eslint-disable-next-line no-unused-vars
+function plusOne(n, _i) {
   return n + 1;
 }
 
@@ -61,15 +62,17 @@ function plusOne(n, i) {
  * @param {number} n
  * @param {number} i
  */
+// eslint-disable-next-line no-unused-vars
 function plusIndex(n, i) {
   return n + i;
 }
 
 /**
- * @param {number} n
- * @param {number} i
+ * @param {number} _n
+ * @param {number} _i
  */
-function constant(n, i) {
+// eslint-disable-next-line no-unused-vars
+function constant(_n, _i) {
   return 42;
 }
 

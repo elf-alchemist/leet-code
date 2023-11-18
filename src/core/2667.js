@@ -28,8 +28,9 @@ import { strictEqual } from 'node:assert';
  * @return {Function}
  */
 function createHelloWorld() {
-  /** @param {Array<unknown>} args */
-  return function (...args) {
+  /** @param {Array<unknown>} _args */
+  // eslint-disable-next-line no-unused-vars
+  return function (..._args) {
     return 'Hello World';
   };
 }

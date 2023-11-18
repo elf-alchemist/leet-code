@@ -1,15 +1,15 @@
-import { Linter } from 'eslint';
-import { configs } from '@eslint/js';
-import { nodeBuiltin } from 'globals';
+import eslintjs from '@eslint/js';
+import globals from 'globals';
+import eslintConfigPrettier from 'eslint-config-prettier';
 
-/** @type {Array<Linter.FlatConfig>} */
+/** @type {Array<import('eslint').Linter.FlatConfig>} */
 export default [
   {
-    ignores: ['**/node_modules/**', '**/dist/**', '**/build/**'],
+    ignores: ['**/node_modules/**', '**/dist/**'],
     files: ['**/*.js'],
-    rules: configs.recommended.rules,
+    rules: eslintjs.configs.recommended.rules,
     languageOptions: {
-      globals: nodeBuiltin,
+      globals: globals.nodeBuiltin,
       sourceType: 'module',
       ecmaVersion: 'latest',
       parserOptions: {
@@ -18,5 +18,8 @@ export default [
         ecmaFeatures: { impliedStrict: true }
       }
     }
+  },
+  {
+    rules: eslintConfigPrettier.rules,
   },
 ];

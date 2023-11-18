@@ -56,25 +56,28 @@ function filter(arr, fn) {
 
 /**
  * @param {number} n
- * @param {number} i
+ * @param {number} _i
  */
-function greaterThan10(n, i) {
+// eslint-disable-next-line no-unused-vars
+function greaterThan10(n, _i) {
   return n > 10;
 }
 
 /**
- * @param {number} n
+ * @param {number} _n
  * @param {number} i
  */
-function firstIndex(n, i) {
+// eslint-disable-next-line no-unused-vars
+function firstIndex(_n, i) {
   return i === 0;
 }
 
 /**
  * @param {number} n
- * @param {number} i
+ * @param {number} _i
  */
-function plusOne(n, i) {
+// eslint-disable-next-line no-unused-vars
+function plusOne(n, _i) {
   return n + 1;
 }
 
