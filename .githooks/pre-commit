@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+pnpm run format
+pnpm run lint
+
+readonly files=$(git diff --name-only) || '.'
+git add $files

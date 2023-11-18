@@ -8,8 +8,9 @@
     "node": ">=20.0.0"
   },
   "scripts": {
-    "format": "prettier --config prettier.config.js --cache --write src/",
-    "lint": "eslint --config eslint.config.js --cache --fix src/",
+    "prepare": "git config --local core.hooksPath .githooks",
+    "format": "prettier --config prettier.config.js --cache --ignore-unknown --write src/",
+    "lint": "eslint --config eslint.config.js --cache --quiet --fix src/",
     "only": "_f() { node --test src/**/$1.js; }; _f",
     "all": "node --test src/**/**.js"
   },

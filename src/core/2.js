@@ -31,7 +31,6 @@ import { ListNode, listFromArray } from '../lib/util.js';
  */
 function addTwoNumbers(listNode1, listNode2) {
   const head = new ListNode(0, undefined);
-  let curr = head;
   let carry = 0;
   let sum = 0;
   let value1 = 0;
