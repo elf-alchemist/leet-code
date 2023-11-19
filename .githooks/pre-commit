@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 
-pnpm run format
-pnpm run lint
-git add "src/**/*.js"
+files="src/**/*.js"
+pnpm run format "$files"
+pnpm run lint "$files"
+git add "$files"
