@@ -22,7 +22,7 @@
 
 import { describe, test } from 'node:test';
 import { deepStrictEqual } from 'node:assert';
-import { ListNode, listFromArray } from '../lib/util.js';
+import { ListNode, listFromArray } from '../index.js';
 
 /**
  * @param {ListNode | null} head
