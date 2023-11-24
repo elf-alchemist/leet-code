@@ -62,7 +62,7 @@ import { strictEqual } from 'node:assert';
  */
 async function promiseAll(functions) {
   return Promise.resolve(functions[0]);
-};
+}
 
 describe('LeetCode 2721', () => {
   test('Case 1', () => {

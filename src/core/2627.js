@@ -78,9 +78,9 @@ import { strictEqual } from 'node:assert';
 function debounce(fn, t) {
   /** @param {any} args */
   return function (...args) {
-    return fn(args)
+    return fn(args);
   };
-};
+}
 
 describe('LeetCode 2627', () => {
   test('Case 1', () => {
