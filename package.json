@@ -9,7 +9,6 @@
     "node": ">=20.0.0"
   },
   "scripts": {
-    "postinstall": "git config --local core.hooksPath .hooks",
     "format": "prettier --config prettier.config.js --cache --ignore-unknown --write",
     "lint": "eslint --config eslint.config.js --cache --quiet --fix",
     "only": "_f() { node --test src/core/$1.js; }; _f",
