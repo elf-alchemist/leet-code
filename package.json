@@ -4,7 +4,7 @@
   "license": "CC0-1.0",
   "version": "1.0.0",
   "type": "module",
-  "packageManager": "pnpm@8.11.0+sha256.5858806c3b292cbec89b5533662168a957358e2bbd86431516d441dc1aface89",
+  "packageManager": "pnpm@8.12.0+sha256.553e4eb0e2a2c9abcb419b3262bdc7aee8ae3c42e2301a1807d44575786160c9",
   "engines": {
     "node": ">=20.0.0"
   },
@@ -23,7 +23,6 @@
     "@types/node": "^20.10.4",
     "eslint": "^8.55.0",
     "eslint-config-prettier": "^9.1.0",
-    "globals": "^13.23.0",
-    "prettier": "^3.1.0"
+    "prettier": "^3.1.1"
   }
 }
